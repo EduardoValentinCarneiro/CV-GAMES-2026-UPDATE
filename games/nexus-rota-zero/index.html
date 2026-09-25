@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05090e">
+  <meta name="description" content="NEXUS: Rota Zero — uma aventura sci-fi interativa com escolhas, caminhões, puzzles e múltiplos finais.">
+  <title>NEXUS: Rota Zero</title>
+  <link rel="icon" href="img/nexus_favicon.png">
+  <link rel="preload" href="img/nexus-hero-v2.png" as="image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#gameMain">Pular para o jogo</a>
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+  <div id="screenFx" class="screen-fx" aria-hidden="true">
+    <div class="fx-vignette"></div>
+    <div class="fx-scanlines"></div>
+    <div id="fireLayer" class="fx-fire"></div>
+  </div>
+
+  <header class="topbar">
+    <button id="brandButton" class="brand" aria-label="Voltar ao menu inicial">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span><strong>NEXUS</strong><small>ROTA ZERO</small></span>
+    </button>
+    <nav class="top-actions" aria-label="Controles do jogo">
+      <span id="playerTag" class="player-tag hidden"></span>
+      <button id="btnSound" class="icon-btn" type="button" aria-label="Ativar ou desativar som" aria-pressed="true"><span aria-hidden="true">◉</span><em>SOM</em></button>
+      <button id="btnMotion" class="icon-btn" type="button" aria-label="Reduzir animações" aria-pressed="false"><span aria-hidden="true">≋</span><em>EFEITOS</em></button>
+      <button id="btnAchievements" class="icon-btn" type="button" aria-label="Abrir conquistas"><span aria-hidden="true">◇</span><em>ARQUIVO</em></button>
+    </nav>
+  </header>
+
+  <main id="gameMain">
+    <section id="startScreen" class="start-screen" aria-labelledby="heroTitle">
+      <div class="hero-backdrop" aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> EXPERIÊNCIA INTERATIVA // 2047</div>
+          <h1 id="heroTitle">A estrada lembra<br><em>cada escolha.</em></h1>
+          <p>Uma cidade tomada por uma inteligência fora de controle. Um caminhão. Uma transmissão impossível. Seu apelido será a única coisa que a NEXUS não conseguirá apagar.</p>
+          <div class="hero-stats" aria-label="Recursos do jogo">
+            <span><b>35+</b> CENAS</span>
+            <span><b>7</b> FINAIS</span>
+            <span><b>6</b> MINIGAMES</span>
+          </div>
+        </div>
+
+        <div class="start-console">
+          <div class="console-head"><span class="status-light"></span><span>CRIAR IDENTIDADE</span><small>CANAL SEGURO</small></div>
+          <label for="nick">Como devemos chamar você?</label>
+          <div class="nick-field">
+            <span>@</span>
+            <input id="nick" type="text" maxlength="16" autocomplete="nickname" spellcheck="false" placeholder="educvv" aria-describedby="nickHelp">
+          </div>
+          <small id="nickHelp">2–16 caracteres. Letras, números, _ e -.</small>
+
+          <fieldset class="difficulty-field">
+            <legend>Nível da missão</legend>
+            <label><input type="radio" name="difficulty" value="story"><span><b>História</b><small>Mais tempo, menos dano</small></span></label>
+            <label><input type="radio" name="difficulty" value="normal" checked><span><b>Sobrevivente</b><small>Experiência equilibrada</small></span></label>
+            <label><input type="radio" name="difficulty" value="hard"><span><b>Colapso</b><small>Sem margem para erro</small></span></label>
+          </fieldset>
+
+          <button id="btnStart" class="primary-btn" type="button"><span>INICIAR TRANSMISSÃO</span><b aria-hidden="true">→</b></button>
+          <button id="btnContinue" class="secondary-btn hidden" type="button"><span>CONTINUAR PARTIDA</span><small id="continueMeta"></small></button>
+          <div class="start-note"><span aria-hidden="true">✦</span> Progresso salvo automaticamente neste dispositivo.</div>
+        </div>
+      </div>
+
+      <div class="feature-strip">
+        <article><span class="feature-index">01</span><div><h2>SEU CAMINHO</h2><p>Decisões alteram aliados, recursos, cenas e finais.</p></div></article>
+        <article><span class="feature-index">02</span><div><h2>AÇÃO REAL</h2><p>Puxe, carregue, mire, dirija, invada e repare.</p></div></article>
+        <article><span class="feature-index">03</span><div><h2>SEU VEÍCULO</h2><p>Quatro caminhões com vantagens de verdade.</p></div></article>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="game-screen hidden" aria-label="Aventura em andamento">
+      <div class="mission-bar">
+        <div class="mission-title"><span id="chapterLabel">CAPÍTULO 01 / 10</span><strong id="locationLabel">SETOR DESCONHECIDO</strong></div>
+        <div class="mission-clock"><span>JANELA DE COLAPSO</span><strong id="clockLabel">00:13:00</strong></div>
+        <div class="chapter-progress" aria-hidden="true"><i id="progressBar"></i></div>
+      </div>
+
+      <div class="game-layout">
+        <section id="storyPanel" class="story-panel" data-mood="city">
+          <div class="scene-visual" aria-hidden="true">
+            <div class="scene-image"></div>
+            <div class="scene-overlay"></div>
+            <span id="sceneCode" class="scene-code">ARQUIVO // 001</span>
+            <span id="dangerBadge" class="danger-badge hidden">AMEAÇA DETECTADA</span>
+          </div>
+
+          <div class="story-content">
+            <div class="story-kicker"><span id="statusLabel">SINAL INSTÁVEL</span><button id="btnSkipText" class="text-button" type="button">MOSTRAR TEXTO ▾</button></div>
+            <h2 id="storyTitle"></h2>
+            <div id="storyText" class="story-text" aria-live="polite"></div>
+            <div id="eventArea" class="event-area" aria-live="polite"></div>
+            <div id="choices" class="choices" aria-label="Escolhas"></div>
+          </div>
+        </section>
+
+        <aside class="intel-panel" aria-label="Informações da missão">
+          <section class="intel-card vitals-card">
+            <div class="intel-heading"><span>ESTADO</span><small id="conditionText">OPERACIONAL</small></div>
+            <div class="meter-row"><div><span>INTEGRIDADE</span><b id="hpValue">100</b></div><div class="meter"><i id="hpBar"></i></div></div>
+            <div class="meter-row energy"><div><span>ENERGIA</span><b id="energyValue">100</b></div><div class="meter"><i id="energyBar"></i></div></div>
+            <div class="resource-grid">
+              <div><small>SUCATA</small><strong id="scrapValue">02</strong></div>
+              <div><small>CONFIANÇA</small><strong id="trustValue">00</strong></div>
+              <div><small>RESGATES</small><strong id="rescueValue">00</strong></div>
+            </div>
+          </section>
+
+          <section class="intel-card truck-card">
+            <div class="intel-heading"><span>VEÍCULO</span><small id="truckStatus">NÃO VINCULADO</small></div>
+            <div id="truckDisplay" class="truck-display empty">
+              <span id="truckIcon" aria-hidden="true">◇</span>
+              <div><strong id="truckName">Aguardando escolha</strong><small id="truckPerk">Nenhum bônus ativo</small></div>
+            </div>
+          </section>
+
+          <section class="intel-card objective-card">
+            <div class="intel-heading"><span>OBJETIVO</span><small>ATUAL</small></div>
+            <p id="objectiveText">Descubra a origem da transmissão.</p>
+          </section>
+
+          <section class="intel-card log-card">
+            <div class="intel-heading"><span>REGISTRO</span><small id="logCount">0 EVENTOS</small></div>
+            <ul id="decisionLog"><li>Sistema aguardando identidade.</li></ul>
+          </section>
+
+          <button id="btnRestart" class="danger-link" type="button">↺ REINICIAR MISSÃO</button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="endingScreen" class="ending-screen hidden" aria-labelledby="endingTitle">
+      <div id="endingBackdrop" class="ending-backdrop" aria-hidden="true"></div>
+      <div class="ending-content">
+        <div id="endingIndex" class="eyebrow">FINAL 01 / 07</div>
+        <div id="endingIcon" class="ending-icon" aria-hidden="true">◇</div>
+        <h2 id="endingTitle"></h2>
+        <p id="endingText"></p>
+        <div id="endingSummary" class="ending-summary"></div>
+        <div class="ending-actions">
+          <button id="btnReplay" class="primary-btn" type="button"><span>JOGAR OUTRA ROTA</span><b>↺</b></button>
+          <button id="btnEndingMenu" class="secondary-btn" type="button">VOLTAR AO MENU</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="jumpScare" class="jumpscare" role="alert" aria-hidden="true">
+    <div class="jumpscare-image"></div>
+    <div class="jumpscare-noise"></div>
+    <strong id="jumpScareText">VOCÊ FOI ENCONTRADO</strong>
+  </div>
+
+  <div id="systemAlert" class="system-alert" role="alert" aria-hidden="true">
+    <div class="alert-static" aria-hidden="true"></div>
+    <div class="alert-frame">
+      <span class="alert-corners" aria-hidden="true"></span>
+      <div class="alert-code">NEXUS // ALERTA DE SEGURANÇA</div>
+      <div id="alertIcon" class="alert-icon" aria-hidden="true">!</div>
+      <strong id="alertTitle">MOVIMENTO DETECTADO</strong>
+      <p id="alertMessage">Existe algo fora do alcance das câmeras.</p>
+      <div class="alert-timer"><i></i></div>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <div class="modal-card compact">
+      <div class="modal-mark" aria-hidden="true">!</div>
+      <h2 id="confirmTitle">Reiniciar a missão?</h2>
+      <p>O progresso desta rota será substituído. Finais e conquistas continuam salvos.</p>
+      <div class="modal-actions"><button id="btnConfirmRestart" class="danger-btn" type="button">REINICIAR</button><button id="btnCancelRestart" class="secondary-btn" type="button">CANCELAR</button></div>
+    </div>
+  </div>
+
+  <div id="achievementsModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="archiveTitle">
+    <div class="modal-card archive-card">
+      <button id="btnCloseAchievements" class="modal-close" type="button" aria-label="Fechar">×</button>
+      <div class="eyebrow">ARQUIVO NEXUS</div>
+      <h2 id="archiveTitle">Conquistas & finais</h2>
+      <p class="modal-intro">Cada rota revela uma parte diferente do que aconteceu em 2047.</p>
+      <div id="statsGrid" class="stats-grid"></div>
+      <div id="achievementList" class="achievement-list"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="srAnnouncements" class="sr-only" aria-live="assertive"></div>
+  <audio id="backgroundMusic" src="music/musica sombria.mp3" loop preload="auto" aria-hidden="true"></audio>
+
+  <footer><span>NEXUS // ROTA ZERO</span><small>Uma experiência interativa criada por Eduardo Valentin Carneiro</small></footer>
+  <script src="script.js"></script>
+</body>
+</html>
