@@ -1,0 +1,100 @@
+.cv-starfall-page { min-height: 100vh; }
+.starfall-main { padding: clamp(1rem, 3vw, 2.4rem) 0 4rem; }
+.starfall-back { display: inline-flex; margin-bottom: 1rem; color: var(--muted); font-size: .9rem; font-weight: 800; text-decoration: none; }
+.starfall-back:hover, .starfall-back:focus-visible { color: var(--primary); }
+.starfall-intro, .starfall-game-panel, .starfall-help { border: 1px solid var(--line); border-radius: 1.2rem; background: var(--surface); box-shadow: var(--shadow); }
+.starfall-intro { display:flex; align-items:end; justify-content:space-between; gap:1rem; padding:clamp(1.1rem,3vw,1.9rem); overflow:hidden; background:radial-gradient(ellipse at 80% 0%,rgba(97,116,255,.21),transparent 48%),var(--surface); }
+.starfall-intro .eyebrow { margin:0 0 .35rem; color:#9fd8ff; font-weight:900; letter-spacing:.11em; }
+.starfall-intro h1 { margin:0; font-size:clamp(2.3rem,6.7vw,4.5rem); letter-spacing:-.07em; line-height:.96; }
+.starfall-intro h1 span { color:#97c9ff; text-shadow:0 0 28px rgba(97,172,255,.42); }
+.starfall-intro p:not(.eyebrow) { margin:.65rem 0 0; color:var(--muted); }
+.starfall-byline { flex:none; color:#9fd8ff; font-size:.72rem; letter-spacing:.14em; }
+.starfall-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(15rem,.37fr); align-items:start; gap:clamp(1rem,2.5vw,1.6rem); margin-top:1.15rem; }
+.starfall-game-panel { min-width:0; padding:clamp(.55rem,1.6vw,.9rem); }
+.starfall-hud { display:flex; flex-wrap:wrap; justify-content:space-between; gap:.4rem .8rem; padding:.2rem .15rem .75rem; }
+.starfall-hud span { display:flex; align-items:center; gap:.32rem; color:var(--muted); font-size:.68rem; font-weight:900; letter-spacing:.08em; }
+.starfall-hud strong { color:var(--text); font-size:.95rem; letter-spacing:0; }
+.starfall-stage { position:relative; width:100%; aspect-ratio:1.44; min-height:25rem; overflow:hidden; border:1px solid rgba(127,171,255,.27); border-radius:1rem; background:#070c1a; isolation:isolate; }
+.starfall-stage canvas { position:absolute; inset:0; display:block; width:100%; height:100%; touch-action:none; }
+.starfall-overlay, .starfall-upgrade { position:absolute; z-index:3; inset:0; display:grid; place-items:center; padding:1.2rem; background:linear-gradient(140deg,rgba(6,10,22,.91),rgba(12,20,43,.89)); text-align:center; backdrop-filter:blur(6px); }
+.starfall-overlay[hidden], .starfall-upgrade[hidden] { display:none; }
+.starfall-overlay-content { display:flex; flex-direction:column; align-items:center; gap:.55rem; max-width:31rem; }
+.starfall-emblem { display:grid; width:3.3rem; aspect-ratio:1; place-items:center; border:1px solid rgba(138,193,255,.58); border-radius:50%; color:#a7d4ff; font-size:1.8rem; box-shadow:0 0 35px rgba(70,138,255,.24),inset 0 0 18px rgba(98,155,255,.12); }
+.starfall-kicker { margin:.2rem 0 0; color:#9fd8ff; font-size:.63rem; font-weight:950; letter-spacing:.19em; }
+.starfall-overlay h2, .starfall-upgrade h2 { margin:0; font-size:clamp(1.55rem,4.5vw,2.4rem); letter-spacing:-.045em; }
+.starfall-overlay-content > p:not(.starfall-kicker):not(.starfall-record-line), .starfall-upgrade > p:not(.starfall-kicker) { margin:.1rem 0; color:#bdc9dc; }
+.starfall-record-line { margin:.45rem 0; color:#9caec8; font-size:.77rem; font-weight:850; letter-spacing:.1em; }
+.starfall-record-line strong { color:#ffe88a; font-size:1rem; }
+.starfall-primary { min-width:14rem; min-height:3rem; font-weight:950; }
+.starfall-overlay small { color:#8093af; font-size:.62rem; font-weight:800; letter-spacing:.08em; }
+.starfall-upgrade { align-content:center; gap:.45rem; background:rgba(8,14,30,.94); }
+.starfall-upgrade-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.65rem; width:min(100%,48rem); margin-top:.65rem; }
+.starfall-upgrade-card { display:flex; min-height:9rem; flex-direction:column; align-items:flex-start; gap:.42rem; padding:.85rem; border:1px solid rgba(137,182,255,.28); border-radius:.85rem; background:linear-gradient(145deg,rgba(32,52,93,.75),rgba(14,24,48,.95)); color:#f3f7ff; text-align:left; cursor:pointer; transition:transform .16s ease,border-color .16s ease,background .16s ease; }
+.starfall-upgrade-card:hover, .starfall-upgrade-card:focus-visible { border-color:#9fd8ff; background:linear-gradient(145deg,rgba(52,77,130,.9),rgba(17,32,63,.98)); transform:translateY(-3px); }
+.starfall-upgrade-icon { font-size:1.45rem; }
+.starfall-upgrade-card strong { font-size:.84rem; }
+.starfall-upgrade-card span:last-child { color:#b9c8dc; font-size:.71rem; line-height:1.4; }
+.starfall-toast { position:absolute; z-index:2; top:12%; left:50%; color:#d7eeff; font-size:clamp(.95rem,3vw,1.4rem); font-weight:950; letter-spacing:.1em; opacity:0; pointer-events:none; text-align:center; text-shadow:0 2px 16px #427eff; transform:translate(-50%,-10px); }
+.starfall-toast.is-visible { animation:starfall-toast .9s ease-out both; }
+@keyframes starfall-toast { 15%,75% { opacity:1; transform:translate(-50%,0); } 100% { opacity:0; transform:translate(-50%,-20px); } }
+.starfall-controls { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:.65rem; padding-top:.8rem; }
+.starfall-controls > p { flex-basis:100%; margin:0; color:var(--muted); font-size:.74rem; text-align:center; }
+.starfall-pause, .starfall-sound { min-height:2.75rem; }
+.starfall-pause:disabled { opacity:.48; cursor:not-allowed; }
+.starfall-mobile-pad { display:none; }
+.starfall-fullscreen { min-height:2.75rem; }
+.starfall-status { min-height:1.1rem; margin:.55rem 0 0; color:var(--muted); font-size:.76rem; text-align:center; }
+.starfall-help { padding:1.1rem; }
+.starfall-help h2 { margin:0 0 .75rem; font-size:1.02rem; }
+.starfall-help ol { display:grid; gap:.7rem; margin:0; padding-left:1.25rem; color:var(--muted); font-size:.81rem; }
+.starfall-help li::marker { color:#9fd8ff; font-weight:900; }
+.starfall-help kbd { padding:.1rem .3rem; border:1px solid var(--line); border-radius:.28rem; color:var(--text); font-size:.69rem; }
+.starfall-tip { display:flex; gap:.55rem; margin-top:1rem; padding:.75rem; border:1px solid rgba(130,179,255,.22); border-radius:.75rem; background:rgba(83,133,255,.07); }
+.starfall-tip > span { color:#9fd8ff; }
+.starfall-tip p, .starfall-goal p { margin:0; color:var(--muted); font-size:.76rem; }
+.starfall-tip strong { color:var(--text); }
+.starfall-goal { margin-top:.9rem; padding-top:.8rem; border-top:1px solid var(--line); }
+.starfall-goal strong { display:block; margin-bottom:.3rem; color:#ffe88a; font-size:.72rem; letter-spacing:.12em; }
+@media (max-width:850px) { .starfall-layout { grid-template-columns:1fr; } .starfall-help { display:grid; grid-template-columns:1fr 1fr; gap:0 1rem; } .starfall-help h2 { grid-column:1/-1; } .starfall-tip, .starfall-goal { align-self:start; } }
+@media (max-width:560px) { .starfall-byline { display:none; } .starfall-stage { min-height:0; aspect-ratio:.82; } .starfall-overlay-content { gap:.42rem; } .starfall-overlay-content > p:not(.starfall-kicker):not(.starfall-record-line) { font-size:.87rem; } .starfall-upgrade { overflow:auto; align-content:start; padding:.7rem; } .starfall-upgrade-grid { grid-template-columns:1fr; width:min(100%,24rem); margin-top:.25rem; } .starfall-upgrade-card { min-height:4.8rem; display:grid; grid-template-columns:2rem 1fr; align-items:center; gap:.08rem .55rem; padding:.5rem .65rem; } .starfall-upgrade-icon { grid-row:span 2; } .starfall-upgrade-card span:last-child { grid-column:2; } .starfall-controls { display:grid; grid-template-columns:1fr 1fr; } .starfall-controls > p { grid-column:1/-1; } .starfall-fullscreen { grid-column:1/-1; width:100%; } .starfall-mobile-pad { display:flex; grid-row:span 2; flex-direction:column; align-items:center; gap:.15rem; } .starfall-mobile-pad > div { display:flex; gap:.15rem; } .starfall-mobile-pad button { width:2.65rem; height:2.45rem; border:1px solid var(--line); border-radius:.55rem; background:var(--bg-soft); color:var(--text); font-weight:900; touch-action:none; user-select:none; } .starfall-mobile-pad button:active { border-color:#9fd8ff; background:var(--surface-hover); } .starfall-pause, .starfall-sound { width:100%; } .starfall-help { display:block; } .starfall-tip { margin-top:.8rem; } }
+@media (prefers-reduced-motion:reduce) { .starfall-upgrade-card { transition:none; } }
+
+.starfall-game-panel:fullscreen,
+.starfall-game-panel.is-fullscreen-fallback {
+  box-sizing:border-box;
+  display:flex;
+  width:100vw;
+  height:100vh;
+  height:100dvh;
+  max-height:100dvh;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  padding:clamp(.4rem,1.3vw,.9rem);
+  overflow:auto;
+  border:0;
+  border-radius:0;
+  background:#070c1a;
+}
+.starfall-game-panel:fullscreen .starfall-hud,
+.starfall-game-panel.is-fullscreen-fallback .starfall-hud { width:min(100%, 100rem); flex:none; }
+.starfall-game-panel:fullscreen .starfall-stage,
+.starfall-game-panel.is-fullscreen-fallback .starfall-stage { width:auto; height:min(calc(100dvh - 13rem), 69vw, 56rem); min-height:0; max-width:100%; flex:0 1 auto; align-self:center; aspect-ratio:1.44; }
+.starfall-game-panel:fullscreen .starfall-controls,
+.starfall-game-panel.is-fullscreen-fallback .starfall-controls { width:min(100%, 100rem); flex:none; }
+.starfall-game-panel:fullscreen .starfall-status,
+.starfall-game-panel.is-fullscreen-fallback .starfall-status { flex:none; }
+.starfall-game-panel.is-fullscreen-fallback { position:fixed; inset:0; z-index:9999; }
+body.has-fullscreen-fallback { overflow:hidden; }
+
+@media (max-width:560px) {
+  .starfall-game-panel:fullscreen .starfall-stage,
+  .starfall-game-panel.is-fullscreen-fallback .starfall-stage { height:min(calc(100dvh - 13rem), 122vw); min-height:0; aspect-ratio:.82; }
+  .starfall-game-panel:fullscreen .starfall-controls,
+  .starfall-game-panel.is-fullscreen-fallback .starfall-controls { width:100%; grid-template-columns:1fr 1fr; gap:.35rem; }
+  .starfall-game-panel:fullscreen .starfall-controls > p,
+  .starfall-game-panel.is-fullscreen-fallback .starfall-controls > p { grid-column:1/-1; }
+  .starfall-game-panel:fullscreen .starfall-fullscreen,
+  .starfall-game-panel.is-fullscreen-fallback .starfall-fullscreen { width:100%; }
+}

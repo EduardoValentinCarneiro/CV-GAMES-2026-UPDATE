@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b18">
+  <meta name="description" content="Pilote sua nave no CV STARFALL. Sobreviva a ondas espaciais, escolha melhorias e enfrente guardiões neste arcade original do CV GAMES.">
+  <meta property="og:title" content="CV STARFALL — Jogo Exclusivo | CV GAMES">
+  <meta property="og:description" content="Sobreviva a ondas cósmicas, colete melhorias e vença os guardiões. Até onde sua nave consegue chegar?">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="CV GAMES"><meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/games/cv-starfall/"><meta property="og:image" content="https://cvgames.github.io/CV-GAMES/games/cv-starfall/cover.svg"><meta property="og:image:alt" content="Capa de CV STARFALL com uma nave em uma chuva de meteoros">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="CV STARFALL — Jogo Exclusivo | CV GAMES"><meta name="twitter:description" content="Pilote, sobreviva, melhore sua nave e vença os guardiões."><meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/games/cv-starfall/cover.svg">
+  <title>CV STARFALL — Jogo Exclusivo | CV GAMES</title><link rel="canonical" href="https://cvgames.github.io/CV-GAMES/games/cv-starfall/"><link rel="icon" href="../../img/incon.png" type="image/png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"CV STARFALL","url":"https://cvgames.github.io/CV-GAMES/games/cv-starfall/","image":"https://cvgames.github.io/CV-GAMES/games/cv-starfall/cover.svg","description":"Arcade espacial de sobrevivência com ondas, melhorias e chefes.","genre":"Arcade, Ação","gamePlatform":"Navegador","inLanguage":"pt-BR"}</script>
+  <script>try { const theme = localStorage.getItem('cv-games-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch { /* Mantém o tema escuro. */ }</script>
+  <link rel="stylesheet" href="../../css/home.css"><link rel="stylesheet" href="game.css"><script src="../../data/jogos.js" defer></script><script src="../../js/stats.js" defer></script><script src="../../js/achievements.js" defer></script><script src="../fullscreen.js" defer></script><script src="game.js" defer></script>
+</head>
+<body class="cv-starfall-page">
+  <a class="skip-link" href="#jogo">Pular para o jogo</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="CV GAMES — Início"><img src="../../img/onconee.png" alt=""><span>CV GAMES</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+    <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central</a><a href="../../perfil.html">Perfil</a></nav>
+    <div class="header-actions"><button class="favorite-button" type="button" data-game-favorite aria-pressed="false" aria-label="Adicionar CV STARFALL aos favoritos" title="Adicionar aos favoritos"><span class="favorite-icon" aria-hidden="true">♡</span><span class="favorite-count" data-favorite-count>0</span><span data-favorite-label>Favoritar</span></button><button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button></div>
+  </div></header>
+  <main class="starfall-main"><div class="container">
+    <a class="starfall-back" href="../../index.html#jogos">← Voltar para Jogos</a>
+    <section class="starfall-intro"><div><p class="eyebrow">🚀 EXCLUSIVO CV GAMES</p><h1>CV <span>STARFALL</span></h1><p>Uma nave. Ondas infinitas. Uma galáxia inteira contra você.</p></div><strong class="starfall-byline">SOBREVIVA À QUEDA</strong></section>
+    <section class="starfall-layout" id="jogo" aria-label="Jogo CV STARFALL">
+      <div class="starfall-game-panel" id="starfall-painel-jogo" data-fullscreen-root>
+        <div class="starfall-hud"><span>ONDA <strong data-wave>1</strong></span><span>PONTOS <strong data-score>0</strong></span><span>VIDAS <strong data-lives>♥♥♥</strong></span><span>RECORDE <strong data-best>0</strong></span></div>
+        <div class="starfall-stage" data-stage>
+          <canvas data-game-canvas aria-label="Arena espacial. Mova a nave para desviar dos inimigos e disparar." role="img">Seu navegador não oferece suporte a Canvas.</canvas>
+          <div class="starfall-overlay" data-main-overlay><div class="starfall-overlay-content"><span class="starfall-emblem" aria-hidden="true">✦</span><p class="starfall-kicker">SINAL DE EMERGÊNCIA // SETOR 07</p><h2 data-overlay-title>O céu está caindo.</h2><p data-overlay-copy>Desvie dos meteoros, destrua os drones e sobreviva. A cada onda, escolha uma melhoria para sua nave.</p><p class="starfall-record-line">RECORDE <strong data-overlay-best>0</strong></p><button class="button button-primary starfall-primary" type="button" data-start>▶ INICIAR MISSÃO</button><small>WASD / SETAS PARA MOVER · ESPAÇO PARA DISPARAR</small></div></div>
+          <section class="starfall-upgrade" data-upgrade hidden aria-labelledby="upgrade-title"><p class="starfall-kicker">SINAL DE REABASTECIMENTO</p><h2 id="upgrade-title">Escolha sua melhoria</h2><p>Uma decisão muda sua próxima onda.</p><div class="starfall-upgrade-grid" data-upgrade-options></div></section>
+          <div class="starfall-toast" data-toast aria-live="polite"></div>
+        </div>
+        <div class="starfall-controls"><div class="starfall-mobile-pad" aria-label="Controles de movimento"><button type="button" data-dir="up" aria-label="Mover para cima">▲</button><div><button type="button" data-dir="left" aria-label="Mover para a esquerda">◀</button><button type="button" data-dir="down" aria-label="Mover para baixo">▼</button><button type="button" data-dir="right" aria-label="Mover para a direita">▶</button></div></div><button class="button button-secondary starfall-pause" type="button" data-pause disabled>Ⅱ PAUSAR</button><button class="button button-secondary starfall-sound" type="button" data-sound aria-pressed="true">🔊 SOM</button><button class="button button-secondary starfall-fullscreen" type="button" data-fullscreen-button="#starfall-painel-jogo" aria-pressed="false">⛶ TELA CHEIA</button><p>Toque e arraste na arena para guiar a nave. Ela dispara automaticamente.</p></div>
+        <p class="starfall-status" data-status aria-live="polite">Pronto para a missão.</p>
+      </div>
+      <aside class="starfall-help"><h2>Como jogar</h2><ol><li>Mova sua nave com <kbd>WASD</kbd>, as setas ou os botões de toque.</li><li>Seus canhões disparam automaticamente. Aponte a nave para os inimigos.</li><li>Sobreviva a cada onda. A cada cinco ondas aparece um guardião.</li><li>Entre nas zonas de energia para recuperar vida ou ganhar um escudo.</li><li>Entre as ondas, escolha uma melhoria: dano, velocidade, disparo, vida ou escudo.</li></ol><div class="starfall-tip"><span>✦</span><p><strong>Estratégia:</strong> melhore sua nave de acordo com o seu estilo. Escudo pode salvar uma missão longa.</p></div><div class="starfall-goal"><strong>MISSÃO</strong><p>Quanto mais ondas superar, maior sua pontuação e seu recorde.</p></div></aside>
+    </section>
+    <div class="ad-slot ad-slot--exclusive-game" data-ad-slot="cv-starfall-after-game" aria-hidden="true"></div>
+  </div></main>
+  <footer class="site-footer"><div class="footer-inner"><div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div><nav class="footer-nav" aria-label="Navegação do rodapé"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central Gamer</a><a href="../../sobre.html">Sobre</a><a href="../../contato.html">Contato</a><a href="../../privacidade.html">Privacidade</a><a href="../../termos.html">Termos</a><a href="../../perfil.html">Perfil</a></nav></div></footer>
+</body></html>
