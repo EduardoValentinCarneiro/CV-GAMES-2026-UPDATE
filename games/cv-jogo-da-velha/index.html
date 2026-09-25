@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Jogue CV JOGO DA VELHA com outra pessoa no mesmo dispositivo. Faça três em linha, acompanhe o placar e jogue em tela cheia.">
+  <meta property="og:title" content="CV JOGO DA VELHA — Jogo Exclusivo | CV GAMES">
+  <meta property="og:description" content="Um clássico repaginado para duas pessoas jogarem localmente no mesmo computador ou celular.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="CV GAMES"><meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/games/cv-jogo-da-velha/"><meta property="og:image" content="https://cvgames.github.io/CV-GAMES/games/cv-jogo-da-velha/cover.svg"><meta property="og:image:alt" content="Capa do jogo CV JOGO DA VELHA">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="CV JOGO DA VELHA — Jogo Exclusivo | CV GAMES"><meta name="twitter:description" content="Jogo da velha local para duas pessoas, com placar, histórico e tela cheia."><meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/games/cv-jogo-da-velha/cover.svg">
+  <title>CV JOGO DA VELHA — Jogo Exclusivo | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/games/cv-jogo-da-velha/">
+  <link rel="icon" href="../../img/incon.png" type="image/png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"CV JOGO DA VELHA","url":"https://cvgames.github.io/CV-GAMES/games/cv-jogo-da-velha/","image":"https://cvgames.github.io/CV-GAMES/games/cv-jogo-da-velha/cover.svg","description":"Jogo da velha local para duas pessoas com placar e partidas no mesmo dispositivo.","genre":"Estratégia, Puzzle","gamePlatform":"Navegador","inLanguage":"pt-BR"}</script>
+  <script>try { const theme = localStorage.getItem('cv-games-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch { /* Mantém o tema escuro. */ }</script>
+  <link rel="stylesheet" href="../../css/home.css"><link rel="stylesheet" href="../../css/site-dialog.css"><link rel="stylesheet" href="game.css">
+  <script src="../../data/jogos.js" defer></script><script src="../../js/stats.js" defer></script><script src="../../js/achievements.js" defer></script><script src="../../js/site-dialog.js" defer></script><script src="../fullscreen.js" defer></script><script src="game.js" defer></script>
+</head>
+<body class="ttt-page">
+  <a class="skip-link" href="#conteudo">Pular para o jogo</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="CV GAMES — Início"><img src="../../img/onconee.png" alt=""><span>CV GAMES</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+    <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central</a><a href="../../perfil.html">Perfil</a></nav>
+    <div class="header-actions"><button class="favorite-button" type="button" data-game-favorite aria-pressed="false" aria-label="Adicionar CV JOGO DA VELHA aos favoritos" title="Adicionar aos favoritos"><span class="favorite-icon" aria-hidden="true">♡</span><span class="favorite-count" data-favorite-count>0</span><span data-favorite-label>Favoritar</span></button><button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button></div>
+  </div></header>
+
+  <main class="ttt-main" id="conteudo"><div class="container">
+    <a class="ttt-back" href="../../index.html#jogos">← Voltar para Jogos</a>
+    <section class="ttt-intro"><div><p class="eyebrow">✦ EXCLUSIVO CV GAMES</p><h1>CV <span>JOGO DA VELHA</span></h1><p>Três símbolos em linha. Uma disputa rápida. Melhor de várias rodadas.</p></div><span class="ttt-intro-mark" aria-hidden="true"><i>×</i><b>○</b></span></section>
+
+    <section class="ttt-lobby" data-lobby aria-labelledby="lobby-title">
+      <div class="ttt-lobby-copy"><p class="ttt-kicker">ESCOLHA SUA PARTIDA</p><h2 id="lobby-title">Quem vai jogar?</h2><p>Chame alguém para jogar no mesmo computador, celular ou tablet.</p></div>
+      <div class="ttt-mode-grid">
+        <button class="ttt-mode-card ttt-mode-local" type="button" data-start-local><span class="ttt-mode-icon" aria-hidden="true"><i>×</i><b>○</b></span><span class="ttt-mode-tag">DISPONÍVEL AGORA</span><strong>2 jogadores locais</strong><span>Uma pessoa joga com X e a outra com O. As rodadas alternam quem começa.</span><b>Começar partida <span aria-hidden="true">→</span></b></button>
+        <button class="ttt-mode-card ttt-mode-soon" type="button" disabled><span class="ttt-mode-icon" aria-hidden="true">✦</span><span class="ttt-mode-tag">EM BREVE</span><strong>Jogador vs. computador</strong><span>Enfrente um adversário controlado pelo computador.</span><b>Modo em desenvolvimento</b></button>
+      </div>
+      <p class="ttt-lobby-footnote">O primeiro turno começa com X. Em cada nova rodada, O começa para deixar a partida equilibrada.</p>
+    </section>
+
+    <section class="ttt-game-view" data-game-view data-fullscreen-root id="ttt-fullscreen" hidden aria-label="Partida de jogo da velha">
+      <div class="ttt-toolbar">
+        <div class="ttt-turn-card" data-live-turn data-player="x"><span class="ttt-turn-symbol" data-turn-symbol aria-hidden="true">×</span><span><small>VEZ DE JOGAR</small><strong data-turn-label>Jogador X</strong></span></div>
+        <div class="ttt-toolbar-actions">
+          <button class="ttt-tool-button" type="button" data-undo disabled title="Desfazer última jogada">↶ <span>Desfazer</span></button>
+          <button class="ttt-tool-button" type="button" data-reset-scores title="Zerar o placar">↻ <span>Zerar placar</span></button>
+          <button class="ttt-tool-button" type="button" data-fullscreen-button="#ttt-fullscreen" aria-pressed="false">⛶ Tela cheia</button>
+        </div>
+      </div>
+      <div class="ttt-layout">
+        <div class="ttt-play-area">
+          <div class="ttt-scoreboard" aria-label="Placar da partida">
+            <div class="ttt-player-card" data-player-card="x" data-player="x"><span class="ttt-player-symbol" aria-hidden="true">×</span><span class="ttt-player-copy"><strong>Jogador X</strong><small data-x-state>Começa primeiro</small></span><b class="ttt-score" data-x-score>0</b></div>
+            <div class="ttt-draw-score"><strong data-draw-score>0</strong><small>EMPATES</small></div>
+            <div class="ttt-player-card" data-player-card="o" data-player="o"><span class="ttt-player-symbol" aria-hidden="true">○</span><span class="ttt-player-copy"><strong>Jogador O</strong><small data-o-state>Esperando a vez</small></span><b class="ttt-score" data-o-score>0</b></div>
+          </div>
+          <div class="ttt-board-frame"><div class="ttt-board" data-board role="grid" aria-label="Tabuleiro do jogo da velha"></div></div>
+          <div class="ttt-round-actions"><button class="ttt-next-round" type="button" data-new-round>＋ Nova rodada</button><span data-round-label>Rodada 1 · X começa</span></div>
+        </div>
+        <aside class="ttt-sidebar" aria-label="Informações da partida">
+          <section class="ttt-status-card" data-status-card><span class="ttt-status-mark" data-status-mark aria-hidden="true">✦</span><div><p class="ttt-kicker">ESTADO DA PARTIDA</p><h2 data-game-status aria-live="polite">Pronto para jogar</h2><p data-status-detail>Faça três símbolos em linha para vencer a rodada.</p></div></section>
+          <section class="ttt-side-card ttt-history-card"><div class="ttt-card-heading"><h2>Jogadas da rodada</h2><span data-move-count>0 jogadas</span></div><ol class="ttt-move-list" data-move-list><li class="ttt-empty-history">As jogadas aparecem aqui.</li></ol></section>
+          <section class="ttt-side-card ttt-how-to"><h2>Como jogar</h2><p>Alterne X e O nas casas vazias. Quem alinhar três símbolos na horizontal, vertical ou diagonal vence. Se as nove casas forem preenchidas, dá velha.</p></section>
+        </aside>
+      </div>
+      <p class="ttt-keyboard-tip">Use o mouse, toque na casa ou navegue pelo tabuleiro com as setas do teclado.</p>
+    </section>
+    <div class="ad-slot ad-slot--exclusive-game" data-ad-slot="cv-jogo-da-velha-after-game" aria-hidden="true"></div>
+  </div></main>
+
+  <footer class="site-footer"><div class="footer-inner"><div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div><nav class="footer-nav" aria-label="Navegação do rodapé"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central Gamer</a><a href="../../sobre.html">Sobre</a><a href="../../contato.html">Contato</a><a href="../../privacidade.html">Privacidade</a><a href="../../termos.html">Termos</a><a href="../../perfil.html">Perfil</a></nav></div></footer>
+</body></html>
