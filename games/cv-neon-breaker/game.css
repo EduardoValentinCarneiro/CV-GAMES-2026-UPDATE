@@ -1,0 +1,126 @@
+.cv-neon-breaker-page { min-height: 100vh; }
+.neon-main { padding: clamp(1.15rem, 3vw, 2.5rem) 0 4rem; }
+.neon-back { display: inline-flex; margin-bottom: 1rem; color: var(--muted); font-size: .9rem; font-weight: 800; text-decoration: none; }
+.neon-back:hover, .neon-back:focus-visible { color: var(--primary); }
+
+.neon-introduction,
+.neon-game-panel,
+.neon-help {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.neon-introduction { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding: clamp(1.15rem, 3vw, 2rem); }
+.neon-introduction .eyebrow { margin-bottom: .35rem; }
+.neon-introduction h1 { margin: 0; font-size: clamp(2.1rem, 5.7vw, 4.25rem); letter-spacing: -.06em; line-height: .95; }
+.neon-introduction p:not(.eyebrow):not(.neon-credit) { max-width: 42rem; margin: .75rem 0 0; color: var(--muted); }
+.neon-credit { flex: 0 0 auto; margin: 0; color: var(--accent); font-size: .82rem; font-weight: 900; letter-spacing: .08em; text-align: right; text-transform: uppercase; }
+
+.neon-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, .43fr); align-items: start; gap: clamp(1rem, 3vw, 1.8rem); margin-top: 1.2rem; }
+.neon-game-panel { min-width: 0; padding: clamp(.7rem, 2vw, 1.15rem); }
+.neon-scoreboard { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .45rem .8rem; margin-bottom: .8rem; }
+.neon-scoreboard span { display: inline-flex; align-items: center; gap: .35rem; color: var(--muted); font-size: .76rem; font-weight: 850; letter-spacing: .01em; text-transform: uppercase; }
+.neon-scoreboard strong { color: var(--text); font-size: 1rem; white-space: nowrap; }
+
+.neon-stage { position: relative; width: min(100%, 50rem); margin: 0 auto; overflow: hidden; aspect-ratio: 10 / 7; border: 1px solid color-mix(in srgb, #b964ff 58%, var(--line)); border-radius: 1.1rem; background: #07102d; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06), 0 16px 32px rgba(41, 16, 82, .26); }
+.neon-stage canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.neon-screen { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .55rem; overflow: auto; padding: 1.2rem; background: linear-gradient(155deg, rgba(8, 14, 43, .83), rgba(51, 13, 87, .87)); color: #f9f4ff; text-align: center; backdrop-filter: blur(6px); }
+.neon-screen[hidden] { display: none; }
+.neon-screen-icon { margin: 0; font-size: clamp(2.15rem, 7vw, 3.5rem); line-height: 1; }
+.neon-screen h2 { margin: 0; font-size: clamp(1.45rem, 4.4vw, 2.25rem); letter-spacing: -.04em; }
+.neon-screen p { max-width: 28rem; margin: 0; color: #e2d8ff; }
+.neon-best-line { font-size: .9rem; }
+.neon-best-line strong { color: #ffe373; }
+.neon-start-button { min-width: min(100%, 13rem); margin-top: .2rem; }
+.neon-screen-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: .2rem; }
+.neon-screen-actions .button { text-decoration: none; }
+.neon-ready-screen { background: linear-gradient(155deg, rgba(6, 17, 48, .86), rgba(19, 87, 112, .88)); }
+.neon-pause-screen { background: rgba(6, 12, 37, .93); }
+.neon-phase-screen { background: linear-gradient(155deg, rgba(22, 15, 69, .91), rgba(121, 32, 152, .89)); }
+.neon-gameover-screen { background: linear-gradient(155deg, rgba(60, 11, 47, .92), rgba(10, 18, 50, .94)); }
+.neon-victory-screen { background: linear-gradient(155deg, rgba(69, 42, 6, .91), rgba(50, 13, 92, .93)); }
+
+.neon-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto auto minmax(0, 1fr); gap: .55rem; width: min(100%, 50rem); margin: .9rem auto 0; }
+.neon-control-button,
+.neon-launch-button,
+.neon-pause-button { min-height: 3.3rem; border: 1px solid var(--line); border-radius: .85rem; background: var(--bg-soft); color: var(--text); font: inherit; font-weight: 850; cursor: pointer; touch-action: none; transition: transform .15s ease, border-color .15s ease, background-color .15s ease; }
+.neon-control-button,
+.neon-launch-button { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; }
+.neon-launch-button { min-width: 6.5rem; border-color: color-mix(in srgb, #ba72ff 55%, var(--line)); background: color-mix(in srgb, #b45cff 16%, var(--bg-soft)); }
+.neon-pause-button { padding: 0 .8rem; }
+.neon-control-button:hover, .neon-control-button:focus-visible,
+.neon-launch-button:hover, .neon-launch-button:focus-visible,
+.neon-pause-button:hover, .neon-pause-button:focus-visible { border-color: var(--primary); background: var(--surface-hover); transform: translateY(-2px); }
+.neon-control-button:active, .neon-launch-button:active, .neon-pause-button:active { transform: translateY(0); }
+.neon-launch-button:disabled, .neon-pause-button:disabled { cursor: not-allowed; opacity: .58; transform: none; }
+.neon-status { min-height: 1.25rem; margin: .75rem 0 0; color: var(--muted); font-size: .8rem; text-align: center; }
+.neon-fullscreen-button { display: block; min-height: 2.8rem; margin: .65rem auto 0; padding: 0 1.2rem; border: 1px solid var(--line); border-radius: .8rem; background: var(--bg-soft); color: var(--text); font: inherit; font-weight: 850; cursor: pointer; }
+.neon-fullscreen-button:hover, .neon-fullscreen-button:focus-visible { border-color: var(--primary); background: var(--surface-hover); }
+
+.neon-help { min-width: 0; padding: 1.15rem; }
+.neon-help h2 { margin: 0; font-size: 1.25rem; }
+.neon-help ol { display: grid; gap: .7rem; margin: 1rem 0; padding-left: 1.25rem; color: var(--muted); font-size: .9rem; }
+.neon-help li::marker { color: var(--accent); font-weight: 900; }
+.neon-help-note { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+.neon-help-note strong { color: var(--text); }
+.neon-help-footnote { margin: 1rem 0 0; color: var(--muted); font-size: .76rem; }
+.neon-help kbd { display: inline-block; padding: .06rem .32rem; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: .3rem; background: var(--bg-soft); color: var(--text); font: inherit; font-weight: 850; }
+
+@media (max-width: 900px) {
+  .neon-layout { grid-template-columns: minmax(0, 1fr); }
+  .neon-help { width: min(100%, 50rem); margin: 0 auto; }
+}
+
+@media (max-width: 620px) {
+  .neon-main { padding-bottom: 2.5rem; }
+  .neon-introduction { align-items: flex-start; flex-direction: column; }
+  .neon-credit { text-align: left; }
+  .neon-scoreboard { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem .7rem; }
+  .neon-scoreboard span:last-child { grid-column: 1 / -1; }
+  .neon-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .neon-control-button, .neon-launch-button, .neon-pause-button { min-width: 0; }
+  .neon-launch-button, .neon-pause-button { min-height: 3.2rem; }
+  .neon-screen-actions { width: 100%; flex-direction: column; }
+  .neon-screen-actions .button { width: 100%; }
+}
+
+@media (max-width: 390px) {
+  .neon-game-panel { padding: .6rem; }
+  .neon-stage { border-radius: .85rem; }
+  .neon-scoreboard span { font-size: .7rem; }
+  .neon-scoreboard strong { font-size: .9rem; }
+  .neon-screen { gap: .38rem; padding: .75rem; }
+  .neon-screen p { font-size: .78rem; }
+  .neon-screen h2 { font-size: 1.35rem; }
+  .neon-screen-icon { font-size: 1.9rem; }
+  .neon-controls { gap: .45rem; }
+  .neon-control-button span { display: none; }
+}
+
+.neon-game-panel:fullscreen,
+.neon-game-panel.is-fullscreen-fallback {
+  box-sizing: border-box;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: clamp(.45rem, 1.5vw, 1rem);
+  overflow: auto;
+  border: 0;
+  border-radius: 0;
+  background: #07102d;
+}
+.neon-game-panel:fullscreen .neon-stage,
+.neon-game-panel.is-fullscreen-fallback .neon-stage { width: auto; height: min(calc(100dvh - 13rem), 70vw, 56rem); min-height: 0; max-width: 100%; flex: 0 1 auto; align-self: center; aspect-ratio: 10 / 7; }
+.neon-game-panel:fullscreen .neon-controls,
+.neon-game-panel.is-fullscreen-fallback .neon-controls { flex: 0 0 auto; }
+.neon-game-panel:fullscreen .neon-fullscreen-button,
+.neon-game-panel.is-fullscreen-fallback .neon-fullscreen-button { flex: 0 0 auto; }
+.neon-game-panel.is-fullscreen-fallback { position: fixed; inset: 0; z-index: 9999; }
+body.has-fullscreen-fallback { overflow: hidden; }

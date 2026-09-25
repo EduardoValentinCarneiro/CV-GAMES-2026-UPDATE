@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">CV NEON BREAKER</title>
+  <desc id="description">Capa original em neon do jogo CV NEON BREAKER, com uma esfera, plataforma e blocos geométricos.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#07102d"/>
+      <stop offset=".52" stop-color="#20135a"/>
+      <stop offset="1" stop-color="#420d61"/>
+    </linearGradient>
+    <linearGradient id="paddle" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#41e7f8"/>
+      <stop offset=".5" stop-color="#91fbff"/>
+      <stop offset="1" stop-color="#b768ff"/>
+    </linearGradient>
+    <linearGradient id="ball" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fffde7"/>
+      <stop offset=".48" stop-color="#fff176"/>
+      <stop offset="1" stop-color="#ff6ec7"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#8f78ff" stroke-opacity=".15" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <path d="M0 476C236 375 385 568 605 455S935 364 1200 467V630H0Z" fill="#160f4c" fill-opacity=".78"/>
+  <g fill="#b2f8ff" opacity=".7">
+    <circle cx="101" cy="99" r="3"/><circle cx="249" cy="172" r="2"/><circle cx="441" cy="77" r="4"/><circle cx="766" cy="105" r="2"/><circle cx="1050" cy="165" r="4"/><circle cx="1117" cy="74" r="2"/><circle cx="916" cy="312" r="3"/>
+  </g>
+  <g filter="url(#glow)" stroke-linejoin="round">
+    <rect x="638" y="92" width="105" height="48" rx="11" fill="#3ee6f6" stroke="#d3fdff" stroke-width="4"/>
+    <rect x="756" y="92" width="105" height="48" rx="11" fill="#a970ff" stroke="#eadcff" stroke-width="4"/>
+    <rect x="874" y="92" width="105" height="48" rx="11" fill="#ff67bb" stroke="#ffd1eb" stroke-width="4"/>
+    <rect x="697" y="155" width="105" height="48" rx="11" fill="#ffcf59" stroke="#fff0b0" stroke-width="4"/>
+    <rect x="815" y="155" width="105" height="48" rx="11" fill="#4ee4b0" stroke="#c8ffe9" stroke-width="4"/>
+    <rect x="933" y="155" width="105" height="48" rx="11" fill="#836eff" stroke="#e2dfff" stroke-width="4"/>
+    <rect x="638" y="218" width="105" height="48" rx="11" fill="#ff74c4" stroke="#ffe0f2" stroke-width="4"/>
+    <rect x="756" y="218" width="105" height="48" rx="11" fill="#37dff5" stroke="#d4fcff" stroke-width="4"/>
+    <rect x="874" y="218" width="105" height="48" rx="11" fill="#bd7dff" stroke="#f0e1ff" stroke-width="4"/>
+    <rect x="992" y="218" width="105" height="48" rx="11" fill="#ffcb61" stroke="#fff1ba" stroke-width="4"/>
+  </g>
+  <g transform="translate(805 353)" filter="url(#glow)">
+    <path d="M-176 94L-19 20" fill="none" stroke="#e2e8ff" stroke-opacity=".55" stroke-width="7" stroke-linecap="round"/>
+    <circle r="42" fill="url(#ball)" stroke="#fffde0" stroke-width="7"/>
+    <circle cx="-12" cy="-12" r="11" fill="#fff" fill-opacity=".86"/>
+  </g>
+  <rect x="641" y="491" width="388" height="36" rx="18" fill="url(#paddle)" filter="url(#glow)"/>
+  <rect x="641" y="491" width="388" height="36" rx="18" fill="none" stroke="#e1ffff" stroke-width="4"/>
+  <text x="83" y="205" fill="#f7f5ff" font-family="system-ui, sans-serif" font-size="46" font-weight="800" letter-spacing="8">CV GAMES</text>
+  <text x="78" y="304" fill="#fff" font-family="system-ui, sans-serif" font-size="86" font-weight="900" letter-spacing="-4">NEON</text>
+  <text x="78" y="388" fill="#ad75ff" font-family="system-ui, sans-serif" font-size="77" font-weight="900" letter-spacing="-3">BREAKER</text>
+  <text x="83" y="447" fill="#cfc6ef" font-family="system-ui, sans-serif" font-size="29" font-weight="600">ARCADE ORIGINAL • 5 FASES • NEON</text>
+  <g transform="translate(84 503)">
+    <rect width="216" height="55" rx="27.5" fill="#f4d85a"/>
+    <text x="108" y="37" text-anchor="middle" fill="#221538" font-family="system-ui, sans-serif" font-size="24" font-weight="900">EXCLUSIVO</text>
+  </g>
+</svg>

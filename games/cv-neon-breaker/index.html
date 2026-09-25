@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jogue CV NEON BREAKER, o brick breaker arcade exclusivo do CV GAMES com cinco fases, blocos resistentes e power-ups locais.">
+  <meta property="og:title" content="CV NEON BREAKER — Jogo Exclusivo | CV GAMES">
+  <meta property="og:description" content="Destrua blocos, mantenha a esfera em jogo e avance por cinco fases neste arcade exclusivo do CV GAMES.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/games/cv-neon-breaker/">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/games/cv-neon-breaker/cover-social.png">
+  <meta property="og:image:alt" content="Capa do jogo CV NEON BREAKER">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CV NEON BREAKER — Jogo Exclusivo | CV GAMES">
+  <meta name="twitter:description" content="Destrua blocos, mantenha a esfera em jogo e avance por cinco fases neste arcade exclusivo do CV GAMES.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/games/cv-neon-breaker/cover-social.png">
+  <meta name="twitter:image:alt" content="Capa do jogo CV NEON BREAKER">
+  <title>CV NEON BREAKER — Jogo Exclusivo | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/games/cv-neon-breaker/">
+  <link rel="icon" href="../../img/incon.png" type="image/png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "CV NEON BREAKER",
+      "url": "https://cvgames.github.io/CV-GAMES/games/cv-neon-breaker/",
+      "image": "https://cvgames.github.io/CV-GAMES/games/cv-neon-breaker/cover-social.png",
+      "description": "Arcade exclusivo do CV GAMES em que o jogador rebate uma esfera para destruir blocos em cinco fases.",
+      "genre": "Arcade",
+      "gamePlatform": "Navegador",
+      "inLanguage": "pt-BR"
+    }
+  </script>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro do documento continua como padrão.
+    }
+  </script>
+  <link rel="stylesheet" href="../../css/home.css">
+  <link rel="stylesheet" href="game.css">
+  <script src="../../data/jogos.js" defer></script>
+  <script src="../../js/stats.js" defer></script>
+  <script src="../../js/achievements.js" defer></script>
+  <script src="../fullscreen.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body class="cv-neon-breaker-page" data-cv-neon-breaker-state="intro">
+  <a class="skip-link" href="#jogo">Pular para o jogo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../index.html" aria-label="CV GAMES — Início">
+        <img src="../../img/onconee.png" alt="">
+        <span>CV GAMES</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="../../index.html">Início</a>
+        <a href="../../index.html#jogos">Jogos</a>
+        <a href="../../baixar.html">Downloads</a>
+        <a href="../../central.html" aria-label="Central Gamer">Central</a>
+        <a href="../../perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <button class="favorite-button" type="button" data-game-favorite aria-pressed="false" aria-label="Adicionar CV NEON BREAKER aos favoritos" title="Adicionar aos favoritos"><span class="favorite-icon" aria-hidden="true">♡</span><span class="favorite-count" data-favorite-count>0</span><span data-favorite-label>Favoritar</span></button>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="neon-main">
+    <div class="container">
+      <a class="neon-back" href="../../index.html#jogos">← Voltar para Jogos</a>
+
+      <section class="neon-introduction" aria-labelledby="neon-title">
+        <div>
+          <p class="eyebrow">⭐ Exclusivo CV GAMES</p>
+          <h1 id="neon-title">CV NEON BREAKER</h1>
+          <p>Destrua os blocos, mantenha a esfera em jogo e avance pelas fases.</p>
+        </div>
+        <p class="neon-credit">Um jogo CV GAMES</p>
+      </section>
+
+      <section class="neon-layout" id="jogo" aria-label="Área de jogo CV NEON BREAKER">
+        <div class="neon-game-panel" id="neon-painel-jogo" data-fullscreen-root>
+          <div class="neon-scoreboard" aria-live="polite">
+            <span>Fase <strong data-phase>1 / 5</strong></span>
+            <span>Pontuação <strong data-score>0</strong></span>
+            <span>❤️ Vidas <strong data-lives>3</strong></span>
+            <span>🔥 Combo <strong data-combo>x1</strong></span>
+            <span>🏆 Recorde <strong data-best-score>0</strong></span>
+          </div>
+
+          <div class="neon-stage">
+            <canvas width="800" height="560" data-cv-neon-breaker-canvas aria-label="Área do jogo CV NEON BREAKER. Mova a plataforma e rebata a esfera contra os blocos." role="img">Seu navegador não oferece suporte a Canvas para executar CV NEON BREAKER.</canvas>
+
+            <section class="neon-screen" data-intro-screen aria-labelledby="intro-title">
+              <p class="neon-screen-icon" aria-hidden="true">🟣</p>
+              <h2 id="intro-title">CV NEON BREAKER</h2>
+              <p>Quebre todos os blocos de cinco fases, use os power-ups e não deixe a esfera cair.</p>
+              <p class="neon-best-line">🏆 Melhor pontuação: <strong data-intro-best-score>0</strong></p>
+              <button class="button button-primary neon-start-button" type="button" data-start-game>▶ Jogar</button>
+            </section>
+
+            <section class="neon-screen neon-ready-screen" data-ready-screen hidden aria-labelledby="ready-title">
+              <p class="neon-screen-icon" aria-hidden="true">✨</p>
+              <h2 id="ready-title">Esfera preparada</h2>
+              <p>Use Espaço, toque na arena ou o botão abaixo para lançar.</p>
+              <button class="button button-primary" type="button" data-launch-ball>▶ Lançar esfera</button>
+            </section>
+
+            <section class="neon-screen neon-pause-screen" data-pause-screen hidden aria-labelledby="pause-title">
+              <p class="neon-screen-icon" aria-hidden="true">⏸️</p>
+              <h2 id="pause-title">PAUSADO</h2>
+              <p>A esfera, os power-ups e a pontuação estão congelados.</p>
+              <button class="button button-primary" type="button" data-resume-game>▶ Retomar</button>
+            </section>
+
+            <section class="neon-screen neon-phase-screen" data-phase-screen hidden aria-labelledby="phase-title">
+              <p class="neon-screen-icon" aria-hidden="true">⚡</p>
+              <h2 id="phase-title">Fase concluída!</h2>
+              <p>Você limpou a arena. Prepare-se para a próxima formação.</p>
+              <button class="button button-primary" type="button" data-next-phase>▶ Próxima fase</button>
+            </section>
+
+            <section class="neon-screen neon-gameover-screen" data-gameover-screen hidden aria-labelledby="gameover-title">
+              <p class="neon-screen-icon" aria-hidden="true">💥</p>
+              <h2 id="gameover-title">GAME OVER</h2>
+              <p>Pontuação final: <strong data-final-score>0</strong></p>
+              <p>Fase alcançada: <strong data-final-phase>1</strong></p>
+              <p>🏆 Recorde: <strong data-final-best-score>0</strong></p>
+              <div class="neon-screen-actions">
+                <button class="button button-primary" type="button" data-restart-game>🔄 Jogar novamente</button>
+                <a class="button button-secondary" href="../../index.html#jogos">← Voltar para CV GAMES</a>
+              </div>
+            </section>
+
+            <section class="neon-screen neon-victory-screen" data-victory-screen hidden aria-labelledby="victory-title">
+              <p class="neon-screen-icon" aria-hidden="true">🏆</p>
+              <h2 id="victory-title">VOCÊ VENCEU!</h2>
+              <p>Você concluiu as cinco fases do CV NEON BREAKER.</p>
+              <p>Pontuação final: <strong data-victory-score>0</strong></p>
+              <p>🏆 Recorde: <strong data-victory-best-score>0</strong></p>
+              <div class="neon-screen-actions">
+                <button class="button button-primary" type="button" data-restart-game>🔄 Jogar novamente</button>
+                <a class="button button-secondary" href="../../index.html#jogos">← Voltar para CV GAMES</a>
+              </div>
+            </section>
+          </div>
+
+          <div class="neon-controls" aria-label="Controles do jogo">
+            <button class="neon-control-button" type="button" data-move-left aria-label="Mover plataforma para a esquerda">◀ <span>Esquerda</span></button>
+            <button class="neon-launch-button" type="button" data-launch-ball aria-label="Lançar esfera">● <span>Lançar</span></button>
+            <button class="neon-pause-button" type="button" data-pause-game aria-label="Pausar jogo">⏸ Pausar</button>
+            <button class="neon-control-button" type="button" data-move-right aria-label="Mover plataforma para a direita"><span>Direita</span> ▶</button>
+          </div>
+          <button class="neon-fullscreen-button" type="button" data-fullscreen-button="#neon-painel-jogo" aria-pressed="false">⛶ Tela cheia</button>
+          <p class="neon-status" data-game-status aria-live="polite">Tela inicial. Escolha Jogar para preparar a primeira esfera.</p>
+        </div>
+
+        <aside class="neon-help" aria-labelledby="how-to-title">
+          <h2 id="how-to-title">Como jogar</h2>
+          <ol>
+            <li>Mova a plataforma com <kbd>A</kbd> / <kbd>D</kbd> ou <kbd>←</kbd> / <kbd>→</kbd>.</li>
+            <li>Use <kbd>Espaço</kbd>, toque na arena ou Lançar para soltar a esfera.</li>
+            <li>Blocos lisos precisam de um impacto; blocos marcados com <strong>II</strong> precisam de dois.</li>
+            <li>Use <kbd>P</kbd> ou Pausar quando precisar de uma pausa.</li>
+          </ol>
+          <div class="neon-help-note"><strong>↔ Plataforma maior</strong><span>temporário</span></div>
+          <div class="neon-help-note"><strong>🐢 Slow</strong><span>temporário</span></div>
+          <div class="neon-help-note"><strong>❤️ Vida extra</strong><span>até 5 vidas</span></div>
+          <p class="neon-help-footnote">Cada carregamento registra apenas o primeiro lançamento nas estatísticas locais.</p>
+        </aside>
+      </section>
+
+      <div class="ad-slot ad-slot--exclusive-game" data-ad-slot="cv-neon-breaker-after-game" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central Gamer</a><a href="../../sobre.html">Sobre</a><a href="../../contato.html">Contato</a><a href="../../privacidade.html">Privacidade</a><a href="../../termos.html">Termos</a><a href="../../perfil.html">Perfil</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
