@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jogue CV DODGE, o arcade exclusivo do CV GAMES: desvie de obstáculos e sobreviva o máximo possível no navegador.">
+  <meta property="og:title" content="CV DODGE — Jogo Exclusivo | CV GAMES">
+  <meta property="og:description" content="Desvie de obstáculos e sobreviva o máximo possível neste arcade exclusivo do CV GAMES.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/games/cv-dodge/">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/games/cv-dodge/cover-social.png">
+  <meta property="og:image:alt" content="Capa do jogo CV DODGE">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CV DODGE — Jogo Exclusivo | CV GAMES">
+  <meta name="twitter:description" content="Desvie de obstáculos e sobreviva o máximo possível neste arcade exclusivo do CV GAMES.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/games/cv-dodge/cover-social.png">
+  <meta name="twitter:image:alt" content="Capa do jogo CV DODGE">
+  <title>CV DODGE — Jogo Exclusivo | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/games/cv-dodge/">
+  <link rel="icon" href="../../img/incon.png" type="image/png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "CV DODGE",
+      "url": "https://cvgames.github.io/CV-GAMES/games/cv-dodge/",
+      "image": "https://cvgames.github.io/CV-GAMES/games/cv-dodge/cover-social.png",
+      "description": "Arcade exclusivo do CV GAMES em que o jogador desvia de obstáculos.",
+      "genre": "Arcade",
+      "gamePlatform": "Navegador",
+      "inLanguage": "pt-BR"
+    }
+  </script>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro do documento continua como padrão.
+    }
+  </script>
+  <link rel="stylesheet" href="../../css/home.css">
+  <link rel="stylesheet" href="game.css">
+  <script src="../../data/jogos.js" defer></script>
+  <script src="../../js/stats.js" defer></script>
+  <script src="../../js/achievements.js" defer></script>
+  <script src="../fullscreen.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body class="cv-dodge-page" data-cv-dodge-state="intro">
+  <a class="skip-link" href="#jogo">Pular para o jogo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../index.html" aria-label="CV GAMES — Início">
+        <img src="../../img/onconee.png" alt="">
+        <span>CV GAMES</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="../../index.html">Início</a>
+        <a href="../../index.html#jogos">Jogos</a>
+        <a href="../../baixar.html">Downloads</a>
+        <a href="../../central.html" aria-label="Central Gamer">Central</a>
+        <a href="../../perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <button class="favorite-button" type="button" data-game-favorite aria-pressed="false" aria-label="Adicionar CV DODGE aos favoritos" title="Adicionar aos favoritos"><span class="favorite-icon" aria-hidden="true">♡</span><span class="favorite-count" data-favorite-count>0</span><span data-favorite-label>Favoritar</span></button>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="dodge-main">
+    <div class="container">
+      <a class="dodge-back" href="../../index.html#jogos">← Voltar para Jogos</a>
+
+      <section class="dodge-introduction" aria-labelledby="dodge-title">
+        <div>
+          <p class="eyebrow">⭐ Exclusivo CV GAMES</p>
+          <h1 id="dodge-title">CV DODGE</h1>
+          <p>Desvie dos obstáculos e sobreviva o máximo possível.</p>
+        </div>
+        <p class="dodge-credit">Um jogo CV GAMES</p>
+      </section>
+
+      <section class="dodge-layout" id="jogo" aria-label="Área de jogo CV DODGE" data-fullscreen-root>
+        <div class="dodge-game-panel">
+          <div class="dodge-scoreboard" aria-live="polite">
+            <span>Pontuação <strong data-score>0</strong></span>
+            <span>🏆 Recorde <strong data-best-score>0</strong></span>
+          </div>
+
+          <div class="dodge-stage">
+            <canvas width="480" height="640" data-cv-dodge-canvas aria-label="Área do jogo CV DODGE. Desvie dos obstáculos que caem." role="img">Seu navegador não oferece suporte a Canvas para executar CV DODGE.</canvas>
+
+            <section class="dodge-screen" data-intro-screen aria-labelledby="intro-title">
+              <p class="dodge-screen-icon" aria-hidden="true">🛡️</p>
+              <h2 id="intro-title">Pronto para desviar?</h2>
+              <p>Use A / D ou as setas. No celular, segure os botões abaixo.</p>
+              <button class="button button-primary dodge-start-button" type="button" data-start-game>▶ Jogar</button>
+            </section>
+
+            <section class="dodge-screen dodge-pause-screen" data-pause-screen hidden aria-labelledby="pause-title">
+              <p class="dodge-screen-icon" aria-hidden="true">⏸️</p>
+              <h2 id="pause-title">Pausado</h2>
+              <p>A pontuação e os obstáculos estão congelados.</p>
+              <button class="button button-primary" type="button" data-resume-game>▶ Retomar</button>
+            </section>
+
+            <section class="dodge-screen dodge-gameover-screen" data-gameover-screen hidden aria-labelledby="gameover-title">
+              <p class="dodge-screen-icon" aria-hidden="true">💥</p>
+              <h2 id="gameover-title">GAME OVER</h2>
+              <p>Pontuação: <strong data-final-score>0</strong></p>
+              <p>🏆 Recorde: <strong data-final-best-score>0</strong></p>
+              <div class="dodge-screen-actions">
+                <button class="button button-primary" type="button" data-restart-game>🔄 Jogar novamente</button>
+                <a class="button button-secondary" href="../../index.html#jogos">← Voltar para CV GAMES</a>
+              </div>
+            </section>
+          </div>
+
+          <div class="dodge-controls" aria-label="Controles do jogo">
+            <button class="dodge-control-button" type="button" data-move-left aria-label="Mover para a esquerda">◀ <span>Esquerda</span></button>
+            <button class="dodge-pause-button" type="button" data-pause-game aria-label="Pausar jogo">⏸ Pausar</button>
+            <button class="dodge-control-button" type="button" data-move-right aria-label="Mover para a direita"><span>Direita</span> ▶</button>
+            <button class="dodge-pause-button dodge-fullscreen-button" type="button" data-fullscreen-button="#jogo" aria-pressed="false">⛶ Tela cheia</button>
+          </div>
+          <p class="dodge-status" data-game-status aria-live="polite">Tela inicial. Escolha Jogar para começar.</p>
+        </div>
+
+        <aside class="dodge-help" aria-labelledby="how-to-title">
+          <h2 id="how-to-title">Como jogar</h2>
+          <ol>
+            <li>Mova o escudo azul para longe dos blocos que caem.</li>
+            <li>Sobreviva para aumentar a pontuação e a dificuldade.</li>
+            <li>Use <kbd>P</kbd> ou Pausar para congelar a partida.</li>
+          </ol>
+          <div class="dodge-help-note"><strong>PC</strong><span>A / D ou ← / →</span></div>
+          <div class="dodge-help-note"><strong>Celular</strong><span>Segure ◀ ou ▶</span></div>
+          <p class="dodge-help-footnote">Cada início de sessão conta uma vez nas suas estatísticas locais.</p>
+        </aside>
+      </section>
+
+      <div class="ad-slot ad-slot--exclusive-game" data-ad-slot="cv-dodge-after-game" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central Gamer</a><a href="../../sobre.html">Sobre</a><a href="../../contato.html">Contato</a><a href="../../privacidade.html">Privacidade</a><a href="../../termos.html">Termos</a><a href="../../perfil.html">Perfil</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
