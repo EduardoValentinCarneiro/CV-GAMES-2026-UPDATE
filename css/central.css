@@ -1,0 +1,594 @@
+.central-main {
+  padding: clamp(2rem, 5vw, 4.75rem) 0 clamp(3.5rem, 7vw, 6rem);
+}
+
+.central-hero,
+.central-section,
+.central-notice {
+  border: 1px solid var(--line);
+  border-radius: 1.3rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.central-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  overflow: hidden;
+  min-height: 19rem;
+  padding: clamp(1.75rem, 5vw, 4rem);
+  background:
+    radial-gradient(circle at 88% 22%, color-mix(in srgb, var(--primary) 25%, transparent), transparent 30%),
+    linear-gradient(125deg, color-mix(in srgb, var(--surface-solid) 93%, transparent), color-mix(in srgb, var(--bg-soft) 86%, transparent));
+}
+
+.central-hero::after {
+  position: absolute;
+  right: -8rem;
+  bottom: -10rem;
+  width: 22rem;
+  height: 22rem;
+  border: 2.35rem solid color-mix(in srgb, var(--accent) 14%, transparent);
+  border-radius: 50%;
+  content: '';
+}
+
+.central-hero-copy,
+.central-hero-mark { position: relative; z-index: 1; }
+.central-hero-copy { max-width: 46rem; }
+.central-hero h1,
+.central-section h2,
+.central-card h3,
+.central-notice h2,
+.emulator-guidance-card h3,
+.system-card h3 { margin: 0; color: var(--text); letter-spacing: -.03em; }
+.central-hero h1 { font-size: clamp(2.15rem, 5vw, 4rem); line-height: .98; }
+.central-lead { margin: 1rem 0 0; color: var(--text); font-size: clamp(1.12rem, 2vw, 1.35rem); font-weight: 800; }
+.central-hero-copy > p:last-of-type { max-width: 43rem; margin: .8rem 0 0; color: var(--muted); }
+.central-hero-mark { flex: 0 0 auto; margin: 0; font-size: clamp(4rem, 11vw, 8rem); line-height: 1; filter: drop-shadow(0 .65rem 1rem rgba(0, 0, 0, .2)); }
+
+.central-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1.45rem;
+}
+
+.central-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: .75rem;
+  margin: 1rem 0;
+}
+
+.central-shortcuts a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 3.3rem;
+  gap: .45rem;
+  border: 1px solid var(--line);
+  border-radius: .85rem;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .92rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+
+.central-shortcuts a:hover,
+.central-shortcuts a:focus-visible { border-color: var(--primary); background: var(--surface-hover); transform: translateY(-2px); }
+
+.central-section { padding: clamp(1.25rem, 3vw, 2rem); }
+.central-section + .central-section { margin-top: 1rem; }
+
+.central-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 1.15rem;
+}
+
+.central-section-heading h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+.central-section-heading > p { max-width: 35rem; margin: 0; color: var(--muted); text-align: right; }
+
+.central-card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.central-card-grid--cloud,
+.central-card-grid--emulators { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.central-card-grid--tools { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.central-card,
+.emulator-guidance-card,
+.system-card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface-solid);
+}
+
+.central-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: clamp(1rem, 2.5vw, 1.45rem);
+}
+
+.central-card--emulator { max-width: 48rem; }
+.central-card-copy { min-width: 0; flex: 1; }
+.central-card-copy p,
+.central-card--tool p,
+.emulator-guidance-card p,
+.system-card p { margin: .65rem 0 0; color: var(--muted); }
+.central-card-copy .button { margin-top: 1rem; }
+
+.central-card-icon,
+.tool-icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border-radius: .85rem;
+  background: color-mix(in srgb, var(--primary) 13%, var(--surface));
+  font-size: 1.45rem;
+}
+
+.central-card-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.central-card-title-row h3 { font-size: 1.1rem; }
+
+.central-status,
+.external-label {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: .2rem .55rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 11%, var(--surface-solid));
+  color: var(--text);
+  font-size: .75rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.external-label {
+  border-color: color-mix(in srgb, var(--primary) 42%, var(--line));
+  background: color-mix(in srgb, var(--primary) 11%, var(--surface-solid));
+  white-space: nowrap;
+}
+
+.central-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border-left: .32rem solid var(--primary);
+  background: color-mix(in srgb, var(--primary) 9%, var(--surface-solid));
+}
+
+.central-notice > span { font-size: 1.2rem; }
+.central-notice p { margin: 0; color: var(--muted); }
+.central-notice h2 { font-size: 1.1rem; }
+.central-notice h2 + p { margin-top: .4rem; }
+
+.central-card--tool {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 14rem;
+}
+
+.central-card--tool .tool-icon { margin-bottom: 1rem; }
+.central-card--tool .central-status { align-self: flex-start; margin-top: auto; }
+.central-card--tool .button { align-self: flex-start; margin-top: .7rem; }
+
+.central-back {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.central-back:hover,
+.central-back:focus-visible { text-decoration: underline; }
+.central-hero--emulators { min-height: 17rem; }
+
+.emulator-guidance-grid,
+.system-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.emulator-guidance-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.emulator-guidance-card { padding: 1.15rem; }
+.emulator-guidance-card > span { display: block; font-size: 1.55rem; }
+.emulator-guidance-card h3 { margin-top: .7rem; font-size: 1.02rem; }
+
+.system-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.system-card { padding: 1.05rem; text-align: center; }
+.system-card > span { display: block; font-size: 1.7rem; }
+.system-card h3 { margin-top: .6rem; font-size: 1rem; }
+.system-card p { color: var(--accent); font-size: .84rem; font-weight: 800; }
+.central-notice--privacy { margin-top: 1rem; }
+
+.emulator-setup,
+.emulator-player { margin-top: 1rem; }
+
+.emulator-setup {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.emulator-step + .emulator-step {
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.emulator-step h3,
+.emulator-control-guide h3,
+.emulator-touch-panel h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.08rem;
+}
+
+.emulator-system-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+  margin-top: .8rem;
+}
+
+.emulator-system-option {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  width: 100%;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  background: var(--surface-solid);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.emulator-system-option:hover:not(:disabled) { border-color: var(--primary); background: var(--surface-hover); transform: translateY(-2px); }
+.emulator-system-option.is-selected { border-color: color-mix(in srgb, var(--success) 62%, var(--line)); background: color-mix(in srgb, var(--success) 10%, var(--surface-solid)); box-shadow: 0 0 0 2px color-mix(in srgb, var(--success) 28%, transparent); }
+.emulator-system-option.is-selected::after { content: 'Selecionado'; margin-left: auto; color: var(--success); font-size: .75rem; font-weight: 850; }
+.emulator-system-option.is-coming-soon { cursor: not-allowed; opacity: .65; }
+.emulator-system-option > span:first-child { font-size: 1.45rem; }
+.emulator-system-copy { display: grid; min-width: 0; gap: .1rem; }
+.emulator-system-option strong { color: var(--text); }
+.emulator-system-option small { color: var(--muted); font-size: .84rem; }
+.emulator-system-option .central-status { margin-left: auto; }
+
+.emulator-note,
+.emulator-file-name,
+.emulator-gamepad-status,
+.emulator-attribution {
+  margin: .7rem 0 0;
+  color: var(--muted);
+}
+
+.emulator-note { font-size: .92rem; }
+.emulator-file-name { min-height: 1.5rem; font-size: .94rem; word-break: break-word; }
+
+.emulator-file-picker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  gap: .55rem;
+  margin-top: .8rem;
+  padding: .7rem 1rem;
+  border: 1px solid var(--primary);
+  border-radius: .75rem;
+  background: var(--primary);
+  color: #052339;
+  cursor: pointer;
+  font-weight: 850;
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+
+.emulator-file-picker:hover { background: var(--primary-strong); transform: translateY(-2px); }
+.emulator-file-picker:focus-within { outline: 3px solid color-mix(in srgb, var(--primary) 78%, white); outline-offset: 3px; }
+
+.emulator-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.emulator-status {
+  margin: .85rem 0 0;
+  padding: .8rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: color-mix(in srgb, var(--bg-soft) 72%, var(--surface-solid));
+  color: var(--muted);
+}
+
+.emulator-status[data-tone='success'] {
+  border-color: color-mix(in srgb, var(--success) 55%, var(--line));
+  color: var(--text);
+}
+
+.emulator-status[data-tone='error'] {
+  border-color: color-mix(in srgb, #ff6886 60%, var(--line));
+  color: var(--text);
+}
+
+.emulator-status[data-tone='loading'] { border-color: color-mix(in srgb, var(--primary) 55%, var(--line)); }
+
+.emulator-player[hidden] { display: none !important; }
+
+.emulator-screen-shell {
+  display: flex;
+  justify-content: center;
+  margin-top: .2rem;
+  padding: clamp(.65rem, 2vw, 1rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: #030812;
+}
+
+.emulator-screen {
+  display: grid;
+  width: min(100%, 768px);
+  aspect-ratio: 256 / 240;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.emulator-screen[data-system='gb'],
+.emulator-screen[data-system='gbc'] {
+  width: min(100%, 640px);
+  aspect-ratio: 160 / 144;
+}
+
+.emulator-screen:fullscreen {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  place-items: center;
+  background: #000;
+}
+
+.emulator-screen[data-system='nes']:fullscreen canvas {
+  width: min(100vw, 106.667vh) !important;
+  height: min(100vh, 93.75vw) !important;
+}
+
+.emulator-screen[data-system='gb']:fullscreen canvas,
+.emulator-screen[data-system='gbc']:fullscreen canvas {
+  width: min(100vw, 111.111vh) !important;
+  height: min(100vh, 90vw) !important;
+}
+
+.emulator-screen canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+
+.emulator-screen-message {
+  max-width: 25rem;
+  margin: 1rem;
+  color: #dbe8ff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.emulator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1rem;
+}
+
+.emulator-actions .button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.emulator-actions .button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+  transform: none;
+}
+
+.emulator-gamepad-status {
+  min-height: 1.5rem;
+  font-size: .92rem;
+}
+
+.emulator-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.emulator-control-guide,
+.emulator-touch-panel {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  background: var(--surface-solid);
+}
+
+.emulator-control-guide dl { margin: .8rem 0 0; }
+.emulator-control-guide dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: .8rem;
+  padding: .42rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.emulator-control-guide [data-keyboard-turbo][hidden] { display: none; }
+.emulator-control-guide dt { color: var(--muted); }
+.emulator-control-guide dd { margin: 0; color: var(--text); font-weight: 800; text-align: right; }
+.emulator-control-guide p,
+.emulator-touch-panel > p { margin: .8rem 0 0; color: var(--muted); font-size: .9rem; }
+
+.touch-layout {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.touch-dpad {
+  display: grid;
+  grid-template-areas:
+    '. up .'
+    'left down right';
+  grid-template-columns: repeat(3, 2.8rem);
+  gap: .2rem;
+}
+
+.touch-dpad button:nth-child(1) { grid-area: up; }
+.touch-dpad button:nth-child(2) { grid-area: left; }
+.touch-dpad button:nth-child(3) { grid-area: down; }
+.touch-dpad button:nth-child(4) { grid-area: right; }
+
+.touch-main-buttons,
+.touch-system-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .5rem;
+}
+
+.touch-system-buttons { grid-column: 1 / -1; justify-content: center; }
+
+.touch-layout button {
+  min-width: 2.8rem;
+  min-height: 2.8rem;
+  padding: .45rem .65rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 55%, var(--line));
+  border-radius: .7rem;
+  background: color-mix(in srgb, var(--primary) 13%, var(--surface));
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 850;
+  touch-action: none;
+  user-select: none;
+}
+
+.touch-main-buttons button {
+  min-width: 3.1rem;
+  min-height: 3.1rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 24%, var(--surface));
+}
+
+.touch-layout button:hover,
+.touch-layout button:active { border-color: var(--primary); background: var(--surface-hover); }
+
+.emulator-legal-note {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  margin-top: 1rem;
+  padding: .85rem .95rem;
+  border-left: .28rem solid var(--accent);
+  border-radius: .75rem;
+  background: color-mix(in srgb, var(--accent) 9%, var(--surface-solid));
+}
+
+.emulator-legal-note > span { font-size: 1.15rem; }
+.emulator-legal-note p { margin: 0; color: var(--muted); }
+.emulator-attribution { font-size: .82rem; }
+.emulator-attribution a { color: var(--primary); }
+
+.central-page a:focus-visible,
+.central-page button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 78%, white);
+  outline-offset: 3px;
+}
+
+@media (max-width: 820px) {
+  .central-card-grid--tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .central-section-heading { align-items: flex-start; flex-direction: column; }
+  .central-section-heading > p { max-width: 100%; text-align: left; }
+}
+
+@media (max-width: 680px) {
+  .central-hero { align-items: flex-start; min-height: 0; }
+  .central-hero-mark { position: absolute; right: 1.25rem; bottom: 1.1rem; opacity: .25; font-size: 5rem; }
+  .central-shortcuts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .central-card-grid--cloud,
+  .central-card-grid--emulators,
+  .emulator-guidance-grid,
+  .system-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .emulator-system-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .emulator-controls-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .central-hero,
+  .central-section,
+  .central-notice { border-radius: 1rem; }
+  .central-hero { padding: 1.35rem; }
+  .central-hero-actions { flex-direction: column; }
+  .central-hero-actions .button { width: 100%; }
+  .central-card-grid--tools,
+  .central-card-grid--cloud,
+  .central-card-grid--emulators,
+  .emulator-guidance-grid,
+  .system-grid,
+  .emulator-system-list { grid-template-columns: 1fr; }
+  .central-card-title-row { align-items: flex-start; flex-direction: column; }
+  .external-label { white-space: normal; }
+  .central-card--tool { min-height: 0; }
+  .emulator-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .emulator-actions .button { width: 100%; }
+  .touch-layout { grid-template-columns: 1fr; justify-items: center; }
+  .touch-main-buttons { justify-content: center; }
+  .emulator-system-option { align-items: flex-start; flex-wrap: wrap; }
+  .emulator-system-option .central-status { margin-left: 0; }
+  .emulator-system-option.is-selected::after { order: 4; width: 100%; margin-left: 0; }
+}

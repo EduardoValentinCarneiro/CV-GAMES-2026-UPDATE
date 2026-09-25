@@ -1,0 +1,178 @@
+.institutional-main {
+  padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(3.5rem, 7vw, 6rem);
+}
+
+.institutional-hero,
+.institutional-section {
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.institutional-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.6rem, 5vw, 3.6rem);
+  background:
+    linear-gradient(120deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), color-mix(in srgb, var(--bg-soft) 84%, transparent)),
+    var(--surface);
+}
+
+.institutional-hero::after {
+  position: absolute;
+  right: -7rem;
+  bottom: -8rem;
+  width: 19rem;
+  height: 19rem;
+  border: 2rem solid color-mix(in srgb, var(--primary) 18%, transparent);
+  border-radius: 50%;
+  content: '';
+}
+
+.institutional-hero > * { position: relative; z-index: 1; }
+
+.institutional-hero h1,
+.institutional-section h2,
+.institutional-section h3 {
+  margin: 0;
+  color: var(--text);
+  letter-spacing: -.03em;
+}
+
+.institutional-hero h1 { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1; }
+
+.institutional-hero p:last-child {
+  max-width: 44rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.12rem);
+}
+
+.institutional-content {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.institutional-section { padding: clamp(1.25rem, 3vw, 2rem); }
+.institutional-section > :first-child { margin-top: 0; }
+.institutional-section > :last-child { margin-bottom: 0; }
+.institutional-section p,
+.institutional-section li { color: var(--muted); }
+.institutional-section p + p { margin-top: .8rem; }
+
+.institutional-list {
+  display: grid;
+  gap: .65rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.institutional-list li {
+  display: flex;
+  gap: .65rem;
+  align-items: flex-start;
+}
+
+.institutional-list li::before {
+  flex: 0 0 auto;
+  color: var(--primary);
+  content: '•';
+  font-weight: 900;
+}
+
+.institutional-note {
+  border-left: .3rem solid var(--primary);
+  border-radius: .8rem;
+  background: color-mix(in srgb, var(--primary) 10%, var(--surface-solid));
+  padding: 1rem 1.1rem;
+}
+
+.institutional-note p { margin: 0; }
+
+.institutional-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.institutional-links .button { min-width: min(100%, 13rem); }
+
+.exclusive-game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.15rem;
+}
+
+.exclusive-game-card {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 1rem;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface-solid);
+  color: var(--text);
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.exclusive-game-card:hover,
+.exclusive-game-card:focus-visible { border-color: var(--primary); transform: translateY(-2px); }
+
+.exclusive-game-cover {
+  width: 5.5rem;
+  height: 100%;
+  min-height: 6.5rem;
+  background: var(--bg-soft);
+  object-fit: cover;
+}
+
+.exclusive-game-copy { align-self: center; min-width: 0; padding: 1rem 1rem 1rem 0; }
+.exclusive-game-copy strong { display: block; overflow-wrap: anywhere; }
+.exclusive-game-copy span { display: block; margin-top: .35rem; color: var(--muted); font-size: .9rem; }
+
+.contact-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.contact-topic {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: .9rem;
+  background: var(--surface-solid);
+  padding: 1rem;
+}
+
+.contact-topic strong { display: block; color: var(--text); }
+.contact-topic span { display: block; margin-top: .3rem; color: var(--muted); font-size: .9rem; }
+
+.legal-section h2 { font-size: clamp(1.2rem, 2vw, 1.45rem); }
+.legal-section h3 { margin-top: 1.35rem; font-size: 1rem; }
+.legal-section h3 + p { margin-top: .45rem; }
+
+.institutional-page a:focus-visible,
+.institutional-page button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 78%, white);
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .exclusive-game-grid,
+  .contact-topics { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .institutional-hero,
+  .institutional-section { border-radius: 1rem; }
+  .exclusive-game-card { grid-template-columns: 4.75rem minmax(0, 1fr); }
+  .exclusive-game-cover { width: 4.75rem; }
+}

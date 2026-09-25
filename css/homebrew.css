@@ -1,0 +1,81 @@
+.homebrew-page .central-hero { min-height: 17rem; }
+
+.homebrew-intro { margin-top: 1rem; }
+
+.homebrew-intro > p { max-width: 52rem; margin: .75rem 0 0; color: var(--muted); }
+
+.homebrew-catalog-heading { align-items: center; }
+
+.homebrew-count { margin: 0; color: var(--muted); font-weight: 700; }
+
+.homebrew-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.homebrew-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface-solid);
+}
+
+.homebrew-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.homebrew-card h3 { margin: 0; color: var(--text); font-size: 1.18rem; letter-spacing: -.02em; }
+
+.homebrew-card-description { min-height: 4.5rem; margin: .8rem 0 0; color: var(--muted); }
+
+.homebrew-card-meta { margin: 1rem 0 0; }
+
+.homebrew-card-meta-row {
+  display: grid;
+  grid-template-columns: minmax(6.6rem, .85fr) minmax(0, 1.35fr);
+  gap: .65rem;
+  padding: .52rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.homebrew-card-meta dt { color: var(--muted); }
+.homebrew-card-meta dd { min-width: 0; margin: 0; color: var(--text); font-weight: 700; overflow-wrap: anywhere; }
+.homebrew-card-meta a { color: var(--primary); }
+
+.homebrew-card-notice { margin: .85rem 0 0; color: var(--muted); font-size: .84rem; }
+
+.homebrew-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.homebrew-card-actions .button { text-align: center; }
+
+.homebrew-empty { margin: 0; color: var(--muted); }
+
+@media (max-width: 1024px) {
+  .homebrew-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .homebrew-page .central-hero { min-height: 0; }
+  .homebrew-catalog-heading { align-items: flex-start; }
+}
+
+@media (max-width: 520px) {
+  .homebrew-grid { grid-template-columns: 1fr; }
+  .homebrew-card-header { flex-direction: column; }
+  .homebrew-card-description { min-height: 0; }
+  .homebrew-card-actions { display: grid; grid-template-columns: 1fr; }
+  .homebrew-card-actions .button { width: 100%; }
+}
