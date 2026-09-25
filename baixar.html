@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre os jogos disponíveis para download no CV GAMES e acesse os destinos originais de cada arquivo.">
+  <meta property="og:title" content="Downloads de Jogos | CV GAMES">
+  <meta property="og:description" content="Encontre os jogos disponíveis para download no CV GAMES.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/baixar.html">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Downloads de Jogos | CV GAMES">
+  <meta name="twitter:description" content="Encontre os jogos disponíveis para download no CV GAMES.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>Downloads de Jogos | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/baixar.html">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro continua como padrão se o armazenamento local não estiver disponível.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/downloads.css">
+  <script src="data/downloads.js" defer></script>
+  <script src="js/downloads.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#downloads">Pular para os downloads</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="CV GAMES — Início">
+        <img src="img/onconee.png" alt="">
+        <span>CV GAMES</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html" aria-current="page">Downloads</a>
+        <a href="central.html" aria-label="Central Gamer">Central</a>
+        <a href="#categorias">Categorias</a>
+        <a href="index.html?favoritos=1#jogos">Favoritos</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-button" href="index.html?favoritos=1#jogos" aria-label="Ver favoritos" title="Ver favoritos"><span class="favorite-icon" aria-hidden="true">♥</span><span>Favoritos</span></a>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container downloads-main">
+    <section class="downloads-hero" aria-labelledby="downloads-title">
+      <p class="eyebrow">Área do portal</p>
+      <h1 id="downloads-title">📥 Downloads</h1>
+      <p>Baixe jogos disponíveis no CV GAMES. Cada botão mantém o destino original cadastrado no portal.</p>
+      <a class="button button-primary" href="index.html#jogos">🎮 Voltar para Jogos</a>
+    </section>
+
+    <section class="download-notice" aria-labelledby="antes-de-baixar-title">
+      <div>
+        <p class="eyebrow">Informação importante</p>
+        <h2 id="antes-de-baixar-title">Antes de baixar</h2>
+      </div>
+      <div>
+        <p>Os downloads podem ser hospedados por serviços externos. Antes de executar um arquivo, verifique-o e siga as orientações de segurança do seu dispositivo.</p>
+        <p>Links externos podem mudar ou ficar indisponíveis, e a disponibilidade do arquivo depende do provedor externo.</p>
+      </div>
+    </section>
+
+    <section class="download-search-area" aria-label="Pesquisar downloads">
+      <label class="search-box" for="pesquisa-downloads">
+        <span aria-hidden="true">🔎</span>
+        <input id="pesquisa-downloads" type="search" data-download-search placeholder="Pesquisar downloads..." autocomplete="off" aria-describedby="status-pesquisa-downloads">
+      </label>
+      <p class="download-search-status" id="status-pesquisa-downloads" data-download-search-status aria-live="polite"></p>
+    </section>
+
+    <section class="download-section" id="categorias" aria-labelledby="categorias-title">
+      <div class="download-section-heading">
+        <h2 id="categorias-title">Categorias</h2>
+      </div>
+      <div class="download-category-list">
+        <button class="download-category-chip is-selected" type="button" data-download-category="todos" aria-pressed="true">✨ Todos</button>
+        <button class="download-category-chip" type="button" data-download-category="jogos" aria-pressed="false">🎮 Jogos</button>
+      </div>
+    </section>
+
+    <section class="download-section" id="downloads" aria-labelledby="catalogo-title">
+      <div class="download-section-heading">
+        <h2 id="catalogo-title">Arquivos disponíveis</h2>
+      </div>
+      <div class="download-catalog-bar">
+        <p data-download-count aria-live="polite">4 downloads encontrados</p>
+        <button class="download-clear" type="button" data-clear-download-filters hidden>Limpar filtros</button>
+      </div>
+      <div class="download-grid" id="download-grid" aria-live="polite">
+        <p>Carregando downloads...</p>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--downloads" data-ad-slot="downloads-before-footer" aria-hidden="true"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p><strong>CV GAMES © 2026</strong></p>
+        <p>Jogos online e downloads</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html">Central Gamer</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

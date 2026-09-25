@@ -1,0 +1,15 @@
+# Artifacts generated only by local browser validation
+.edge-phase*/
+.edge-phase*
+phase*-validation.js
+phase*-validation-report.json
+phase*-playwright-test.js
+phase*-playwright-report.json
+phase*-playwright-results.json
+phase*-playwright-errors.txt
+phase*-desktop.png
+phase*-mobile.png
+phase*-dom.txt
+phase*-edge-errors.txt
+playwright-report/
+test-results/

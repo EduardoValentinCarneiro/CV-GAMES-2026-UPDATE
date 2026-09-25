@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página não encontrada no CV GAMES.">
+  <meta name="robots" content="noindex, follow">
+  <title>Página não encontrada | CV GAMES</title>
+  <link rel="icon" href="/CV-GAMES/img/incon.png" type="image/png">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="/CV-GAMES/css/home.css">
+  <style>
+    .error-main { display: grid; min-height: calc(100vh - 10rem); place-items: center; padding: 2rem 1rem; }
+    .error-card { width: min(100%, 42rem); padding: clamp(1.5rem, 5vw, 3rem); border: 1px solid var(--line); border-radius: 1.4rem; background: var(--surface); box-shadow: var(--shadow); text-align: center; }
+    .error-icon { margin: 0 0 .75rem; font-size: clamp(3rem, 10vw, 5rem); line-height: 1; }
+    .error-card h1 { margin: 0; color: var(--text); font-size: clamp(1.8rem, 5vw, 3rem); }
+    .error-card p { max-width: 35rem; margin: 1rem auto 0; color: var(--muted); }
+    .error-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1.6rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/CV-GAMES/" aria-label="CV GAMES — Início">
+        <img src="/CV-GAMES/img/onconee.png" alt="">
+        <span>CV GAMES</span>
+      </a>
+      <nav class="primary-nav" aria-label="Navegação principal">
+        <a href="/CV-GAMES/">Início</a>
+        <a href="/CV-GAMES/#jogos">Jogos</a>
+        <a href="/CV-GAMES/baixar.html">Downloads</a>
+        <a href="/CV-GAMES/central.html">Central</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="error-main" id="conteudo">
+    <section class="error-card" aria-labelledby="error-title">
+      <p class="error-icon" aria-hidden="true">😕</p>
+      <h1 id="error-title">Página não encontrada</h1>
+      <p>Esta página não foi encontrada. Volte para a Home ou explore os jogos disponíveis.</p>
+      <div class="error-actions">
+        <a class="button button-primary" href="/CV-GAMES/">← Voltar para o CV GAMES</a>
+        <a class="button button-secondary" href="/CV-GAMES/#jogos">🎮 Explorar jogos</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="/CV-GAMES/">Início</a>
+        <a href="/CV-GAMES/#jogos">Jogos</a>
+        <a href="/CV-GAMES/baixar.html">Downloads</a>
+        <a href="/CV-GAMES/central.html">Central Gamer</a>
+        <a href="/CV-GAMES/sobre.html">Sobre</a>
+        <a href="/CV-GAMES/contato.html">Contato</a>
+        <a href="/CV-GAMES/privacidade.html">Privacidade</a>
+        <a href="/CV-GAMES/termos.html">Termos</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
