@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Política de Privacidade do CV GAMES: dados locais do navegador, serviços externos e funcionamento atual do portal.">
+  <meta property="og:title" content="Política de Privacidade | CV GAMES">
+  <meta property="og:description" content="Entenda como o CV GAMES usa dados locais do navegador e referências a serviços externos.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/privacidade.html">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Política de Privacidade | CV GAMES">
+  <meta name="twitter:description" content="Entenda como o CV GAMES usa dados locais do navegador e referências a serviços externos.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>Política de Privacidade | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/privacidade.html">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/institutional.css">
+  <script src="js/institutional.js" defer></script>
+</head>
+<body class="institutional-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="CV GAMES — Início"><img src="img/onconee.png" alt=""><span>CV GAMES</span></a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html" aria-label="Central Gamer">Central</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-button" href="index.html?favoritos=1#jogos" aria-label="Ver favoritos" title="Ver favoritos"><span class="favorite-icon" aria-hidden="true">♥</span><span>Favoritos</span></a>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="institutional-main">
+    <div class="container">
+      <section class="institutional-hero" aria-labelledby="privacidade-title">
+        <p class="eyebrow">Transparência</p>
+        <h1 id="privacidade-title">Política de Privacidade</h1>
+        <p>Esta página descreve o funcionamento atual do CV GAMES, sem conta online, banco de dados de usuários ou rastreadores próprios.</p>
+      </section>
+
+      <div class="institutional-content">
+        <section class="institutional-section legal-section" aria-labelledby="dados-locais-title">
+          <h2 id="dados-locais-title">Dados guardados neste navegador</h2>
+          <p>O CV GAMES usa o armazenamento local do navegador (<code>localStorage</code>) para manter recursos do próprio site. Esses dados ficam neste dispositivo enquanto não houver um sistema online de contas.</p>
+          <ul class="institutional-list">
+            <li>Preferência de modo claro ou escuro.</li>
+            <li>Jogos marcados como favoritos.</li>
+            <li>Apelido e avatar do Perfil local.</li>
+            <li>Histórico e estatísticas locais de acesso aos jogos.</li>
+            <li>Conquistas e recordes dos jogos exclusivos.</li>
+          </ul>
+          <p>Essas informações servem para personalizar a visita neste navegador. Elas não representam uma conta conectada nem sincronização em nuvem.</p>
+        </section>
+
+        <section class="institutional-section legal-section" aria-labelledby="emuladores-privacidade-title">
+          <h2 id="emuladores-privacidade-title">Emuladores e arquivos locais</h2>
+          <p>Ao selecionar um arquivo compatível de NES na página de Emuladores, o arquivo é lido diretamente pelo navegador e utilizado apenas na memória durante a sessão de jogo. Game Boy e Game Boy Color estão temporariamente indisponíveis.</p>
+          <p>O CV GAMES não envia esse arquivo para servidor, GitHub, API, Analytics ou terceiros. O nome do arquivo e seu conteúdo não são adicionados ao Perfil, aos favoritos ou ao histórico do portal.</p>
+          <p>Os homebrews legais da biblioteca são arquivos estáticos do próprio CV GAMES requisitados pelo navegador quando você escolhe jogar um deles. Eles não enviam o arquivo pessoal selecionado pelo usuário para nenhum serviço.</p>
+          <p>Save states e salvamentos persistentes não estão habilitados na versão atual do emulador.</p>
+        </section>
+
+        <section class="institutional-section legal-section" aria-labelledby="ferramentas-privacidade-title">
+          <h2 id="ferramentas-privacidade-title">Ferramentas Gamer</h2>
+          <p>Eventos de controle, teclado e mouse, além de timer, cálculos de sensibilidade, informações de tela, FPS e indicadores de conexão, são processados apenas durante a visita nesta página. Os eventos de entrada não são armazenados nem enviados pelo CV GAMES; os resultados também não são salvos em perfil, favoritos ou histórico, e a página não acessa, exibe ou armazena IP ou localização.</p>
+          <p>Quando você inicia o teste de latência, o navegador faz cinco requisições HTTP pequenas ao arquivo público <code>robots.txt</code> do próprio CV GAMES. O teste não envia formulários, arquivos ou conteúdo fornecido por você, não mede ping ICMP e não consulta serviços de speed test de terceiros.</p>
+        </section>
+
+        <section class="institutional-section legal-section" aria-labelledby="nao-coletamos-title">
+          <h2 id="nao-coletamos-title">O que não existe nesta versão</h2>
+          <p>O portal não possui login, cadastro, banco de dados de usuários, coleta de senha, Analytics, publicidade ativa ou venda de dados implementados nesta fase.</p>
+          <p>Também não há formulário de contato funcionando, portanto o site não recebe mensagens ou dados pessoais por esse meio.</p>
+        </section>
+
+        <section class="institutional-section legal-section" aria-labelledby="cookies-title">
+          <h2 id="cookies-title">Cookies</h2>
+          <p>Na versão atual, o CV GAMES não utiliza cookies próprios para publicidade, Analytics ou perfil online. Por isso, não há banner de consentimento exibido apenas por aparência.</p>
+          <p>Jogos incorporados, links externos e outros serviços acessados a partir do portal podem utilizar seus próprios cookies ou tecnologias conforme as respectivas políticas.</p>
+        </section>
+
+        <section class="institutional-section legal-section" aria-labelledby="externos-privacidade-title">
+          <h2 id="externos-privacidade-title">Jogos, links e serviços externos</h2>
+          <p>Alguns jogos são carregados por iframe, e parte do catálogo e dos downloads direciona para serviços externos. Esses serviços podem ter regras, disponibilidade e políticas de privacidade próprias.</p>
+          <p>O CV GAMES não controla as práticas desses provedores. Antes de continuar em um destino externo, consulte as informações oferecidas pelo próprio serviço quando necessário.</p>
+        </section>
+
+        <section class="institutional-section legal-section" aria-labelledby="contato-privacidade-title">
+          <h2 id="contato-privacidade-title">Contato sobre privacidade</h2>
+          <p>Dúvidas relacionadas a esta Política de Privacidade podem ser enviadas pelo canal oficial do CV GAMES.</p>
+          <div class="institutional-links"><a class="button button-secondary" href="mailto:cvgames.ofc@gmail.com">cvgames.ofc@gmail.com</a></div>
+        </section>
+
+        <section class="institutional-section legal-section" aria-labelledby="controle-title">
+          <h2 id="controle-title">Seu controle</h2>
+          <p>Você pode gerenciar ou apagar os dados locais pelas configurações do navegador. A página de Perfil também oferece uma redefinição que remove apenas apelido, avatar e conquistas, preservando favoritos, estatísticas e tema.</p>
+          <div class="institutional-links"><a class="button button-secondary" href="perfil.html">Abrir Perfil local</a><a class="button button-secondary" href="termos.html">Ler os Termos de Uso</a></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="index.html">Início</a><a href="index.html#jogos">Jogos</a><a href="baixar.html">Downloads</a><a href="central.html">Central Gamer</a><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html" aria-current="page">Privacidade</a><a href="termos.html">Termos</a><a href="perfil.html">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

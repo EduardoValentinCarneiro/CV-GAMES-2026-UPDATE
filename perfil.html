@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Perfil local do CV GAMES para acompanhar favoritos, histórico e conquistas neste navegador.">
+  <meta name="robots" content="noindex, follow">
+  <title>Perfil | CV GAMES</title>
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/site-dialog.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <script src="data/jogos.js" defer></script>
+  <script src="js/stats.js" defer></script>
+  <script src="js/achievements.js" defer></script>
+  <script src="js/profile-store.js" defer></script>
+  <script src="js/site-dialog.js" defer></script>
+  <script src="js/profile.js" defer></script>
+</head>
+<body class="profile-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="CV GAMES — Início">
+        <img src="img/onconee.png" alt="">
+        <span>CV GAMES</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html" aria-label="Central Gamer">Central</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="perfil.html" aria-current="page">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-button" href="index.html?favoritos=1#jogos" aria-label="Ver favoritos" title="Ver favoritos"><span class="favorite-icon" aria-hidden="true">♥</span><span class="favorite-count" data-favorite-count>0</span><span>Favoritos</span></a>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="profile-main">
+    <div class="container">
+      <section class="profile-hero" aria-labelledby="profile-title">
+        <div class="profile-identity">
+          <div class="profile-avatar" data-profile-avatar aria-hidden="true">🎮</div>
+          <div>
+            <p class="eyebrow">Perfil local</p>
+            <h1 id="profile-title" data-profile-name>Jogador</h1>
+            <p class="profile-subtitle">Acompanhe seu progresso neste navegador.</p>
+          </div>
+        </div>
+        <button class="button button-secondary" type="button" data-edit-profile aria-expanded="false" aria-controls="editor-perfil">Editar perfil</button>
+      </section>
+
+      <p class="profile-privacy">🔒 Seus dados de perfil, favoritos, histórico e conquistas ficam salvos apenas neste navegador.</p>
+
+      <section class="profile-editor-panel" id="editor-perfil" data-profile-editor hidden aria-labelledby="editor-title">
+        <div class="profile-section-heading">
+          <div>
+            <h2 id="editor-title">Editar perfil local</h2>
+            <p>Escolha apenas um apelido e um avatar pré-definido.</p>
+          </div>
+        </div>
+        <form class="profile-form" data-profile-form>
+          <label for="apelido-local">Apelido</label>
+          <input id="apelido-local" name="nickname" type="text" maxlength="24" autocomplete="off" data-profile-nickname aria-describedby="apelido-ajuda">
+          <p id="apelido-ajuda" class="form-help">Máximo de 24 caracteres. Nenhum dado pessoal é solicitado.</p>
+          <fieldset class="avatar-picker">
+            <legend>Avatar</legend>
+            <div class="avatar-options" role="group" aria-label="Escolha um avatar">
+              <button type="button" class="avatar-option" data-avatar-option="🎮" aria-pressed="true" aria-label="Avatar controle">🎮</button>
+              <button type="button" class="avatar-option" data-avatar-option="👾" aria-pressed="false" aria-label="Avatar alien">👾</button>
+              <button type="button" class="avatar-option" data-avatar-option="🕹️" aria-pressed="false" aria-label="Avatar arcade">🕹️</button>
+              <button type="button" class="avatar-option" data-avatar-option="🔥" aria-pressed="false" aria-label="Avatar fogo">🔥</button>
+              <button type="button" class="avatar-option" data-avatar-option="⚡" aria-pressed="false" aria-label="Avatar raio">⚡</button>
+              <button type="button" class="avatar-option" data-avatar-option="🏆" aria-pressed="false" aria-label="Avatar troféu">🏆</button>
+              <button type="button" class="avatar-option" data-avatar-option="🐉" aria-pressed="false" aria-label="Avatar dragão">🐉</button>
+              <button type="button" class="avatar-option" data-avatar-option="🚀" aria-pressed="false" aria-label="Avatar foguete">🚀</button>
+            </div>
+          </fieldset>
+          <div class="profile-form-actions">
+            <button class="button button-primary" type="submit">Salvar perfil</button>
+            <button class="button button-secondary" type="button" data-cancel-profile>Cancelar</button>
+          </div>
+          <p class="form-status" data-profile-status aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="profile-section" aria-labelledby="stats-title">
+        <div class="profile-section-heading">
+          <div>
+            <h2 id="stats-title">📊 Suas estatísticas</h2>
+            <p>Dados locais deste navegador, nunca um ranking global.</p>
+          </div>
+        </div>
+        <dl class="profile-stat-grid">
+          <div class="profile-stat"><dt>Jogos diferentes</dt><dd data-stat-unique>0</dd></div>
+          <div class="profile-stat"><dt>Acessos locais</dt><dd data-stat-accesses>0</dd></div>
+          <div class="profile-stat"><dt>Favoritos</dt><dd data-stat-favorites>0</dd></div>
+          <div class="profile-stat"><dt>Conquistas</dt><dd data-stat-achievements>0/11</dd></div>
+          <div class="profile-stat profile-stat-text"><dt>Mais jogado</dt><dd data-stat-most-played>—</dd></div>
+          <div class="profile-stat profile-stat-text"><dt>Último acesso</dt><dd data-stat-last-played>—</dd></div>
+        </dl>
+      </section>
+
+      <section class="profile-section" aria-labelledby="achievements-title">
+        <div class="profile-section-heading">
+          <div>
+            <h2 id="achievements-title">🏆 Conquistas</h2>
+            <p data-achievements-note>Conquistas calculadas com suas ações locais confirmadas.</p>
+          </div>
+        </div>
+        <div class="achievement-grid" data-achievement-grid></div>
+      </section>
+
+      <section class="profile-section" aria-labelledby="most-played-title">
+        <div class="profile-section-heading">
+          <div>
+            <h2 id="most-played-title">🏆 Seu jogo mais jogado</h2>
+            <p>Baseado nos acessos registrados neste dispositivo.</p>
+          </div>
+        </div>
+        <div class="profile-highlight" data-most-played></div>
+      </section>
+
+      <section class="profile-section" aria-labelledby="recent-title">
+        <div class="profile-section-heading">
+          <div>
+            <h2 id="recent-title">🕹️ Jogados recentemente</h2>
+            <p>Os últimos jogos acessados neste navegador.</p>
+          </div>
+        </div>
+        <div class="profile-game-grid" data-recent-games></div>
+      </section>
+
+      <section class="profile-section" aria-labelledby="favorites-title">
+        <div class="profile-section-heading profile-section-heading-action">
+          <div>
+            <h2 id="favorites-title">❤️ Seus favoritos</h2>
+            <p>Os mesmos favoritos marcados no catálogo.</p>
+          </div>
+          <a class="catalog-reset" href="index.html?favoritos=1#jogos">Ver todos os favoritos</a>
+        </div>
+        <div class="profile-game-grid" data-favorite-games></div>
+      </section>
+
+      <section class="profile-reset-panel" aria-labelledby="reset-title">
+        <div>
+          <h2 id="reset-title">Redefinir perfil</h2>
+          <p>Apaga apelido, avatar e conquistas locais. Estatísticas, favoritos e tema são mantidos.</p>
+        </div>
+        <button class="catalog-reset profile-reset-button" type="button" data-reset-profile>Redefinir perfil</button>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p><strong>CV GAMES © 2026</strong></p>
+        <p>Jogos online e downloads</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html">Central Gamer</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="perfil.html" aria-current="page">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
