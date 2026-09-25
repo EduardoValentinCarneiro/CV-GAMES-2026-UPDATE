@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Jogue CV XADREZ com outra pessoa no mesmo dispositivo. Regras completas, roque, en passant, promoção, histórico e tabuleiro giratório.">
+  <meta property="og:title" content="CV XADREZ — Jogo Exclusivo | CV GAMES">
+  <meta property="og:description" content="Uma partida de xadrez local para duas pessoas, com regras completas e tabuleiro que gira a cada jogada.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="CV GAMES"><meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/games/cv-xadrez/"><meta property="og:image" content="https://cvgames.github.io/CV-GAMES/games/cv-xadrez/cover.svg"><meta property="og:image:alt" content="Capa do jogo CV XADREZ">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="CV XADREZ — Jogo Exclusivo | CV GAMES"><meta name="twitter:description" content="Xadrez completo para duas pessoas no mesmo dispositivo."><meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/games/cv-xadrez/cover.svg">
+  <title>CV XADREZ — Jogo Exclusivo | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/games/cv-xadrez/">
+  <link rel="icon" href="../../img/incon.png" type="image/png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"CV XADREZ","url":"https://cvgames.github.io/CV-GAMES/games/cv-xadrez/","image":"https://cvgames.github.io/CV-GAMES/games/cv-xadrez/cover.svg","description":"Jogo de xadrez local para duas pessoas com roque, en passant, promoção e regras de empate.","genre":"Estratégia, Tabuleiro","gamePlatform":"Navegador","inLanguage":"pt-BR"}</script>
+  <script>try { const theme = localStorage.getItem('cv-games-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch { /* Mantém o tema escuro. */ }</script>
+  <link rel="stylesheet" href="../../css/home.css"><link rel="stylesheet" href="../../css/site-dialog.css"><link rel="stylesheet" href="game.css">
+  <script src="../../data/jogos.js" defer></script><script src="../../js/stats.js" defer></script><script src="../../js/achievements.js" defer></script><script src="../../js/site-dialog.js" defer></script><script src="../fullscreen.js" defer></script><script src="engine.js" defer></script><script src="game.js" defer></script>
+</head>
+<body class="chess-page">
+  <a class="skip-link" href="#conteudo">Pular para o jogo</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="CV GAMES — Início"><img src="../../img/onconee.png" alt=""><span>CV GAMES</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+    <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central</a><a href="../../perfil.html">Perfil</a></nav>
+    <div class="header-actions"><button class="favorite-button" type="button" data-game-favorite aria-pressed="false" aria-label="Adicionar CV XADREZ aos favoritos" title="Adicionar aos favoritos"><span class="favorite-icon" aria-hidden="true">♡</span><span class="favorite-count" data-favorite-count>0</span><span data-favorite-label>Favoritar</span></button><button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button></div>
+  </div></header>
+
+  <main class="chess-main" id="conteudo"><div class="container">
+    <a class="chess-back" href="../../index.html#jogos">← Voltar para Jogos</a>
+    <section class="chess-intro"><div><p class="eyebrow">♟ EXCLUSIVO CV GAMES</p><h1>CV <span>XADREZ</span></h1><p>Dois jogadores. Um tabuleiro. Cada movimento muda tudo.</p></div><span class="chess-intro-mark" aria-hidden="true">♞</span></section>
+
+    <section class="chess-lobby" data-lobby aria-labelledby="lobby-title">
+      <div class="chess-lobby-copy"><p class="chess-kicker">ESCOLHA SUA PARTIDA</p><h2 id="lobby-title">Como quer jogar?</h2><p>Reúna outra pessoa e joguem no mesmo dispositivo. O tabuleiro acompanha quem está na vez.</p></div>
+      <div class="chess-mode-grid">
+        <button class="chess-mode-card chess-mode-local" type="button" data-start-local><span class="chess-mode-icon" aria-hidden="true">♟♙</span><span class="chess-mode-tag">DISPONÍVEL AGORA</span><strong>2 jogadores locais</strong><span>Uma pessoa joga de brancas e outra de pretas, alternando no mesmo computador ou tablet.</span><b>Começar partida <span aria-hidden="true">→</span></b></button>
+        <button class="chess-mode-card chess-mode-soon" type="button" disabled><span class="chess-mode-icon" aria-hidden="true">♙✦</span><span class="chess-mode-tag">EM BREVE</span><strong>Jogador vs. computador</strong><span>Uma partida contra um adversário controlado pelo computador.</span><b>Modo em desenvolvimento</b></button>
+      </div>
+      <p class="chess-lobby-footnote">Brancas começam. Depois de cada jogada, o tabuleiro gira para deixar o próximo jogador na parte inferior.</p>
+    </section>
+
+    <section class="chess-game-view" data-game-view data-fullscreen-root id="chess-fullscreen" hidden aria-label="Partida de xadrez local">
+      <div class="chess-game-toolbar">
+        <div class="chess-live-turn" data-live-turn><span class="turn-dot" aria-hidden="true"></span><span data-turn-label>Vez das brancas</span></div>
+        <div class="chess-toolbar-actions">
+          <button class="chess-tool-button" type="button" data-undo title="Desfazer última jogada">↶ <span>Desfazer</span></button>
+          <button class="chess-tool-button" type="button" data-draw-claim disabled title="Disponível após repetição ou 50 lances">½ <span>Reivindicar empate</span></button>
+          <button class="chess-tool-button" type="button" data-resign>⚑ <span>Desistir</span></button>
+          <button class="chess-tool-button" type="button" data-settings-open>⚙ <span>Configurações</span></button>
+          <button class="chess-tool-button chess-fullscreen-button" type="button" data-fullscreen-button="#chess-fullscreen" aria-pressed="false">⛶ Tela cheia</button>
+        </div>
+      </div>
+
+      <div class="chess-play-layout">
+        <div class="chess-board-stack" data-board-stack data-bottom-side="white">
+          <section class="chess-player-seat" data-player-card="black" aria-label="Jogador das pretas"><span class="seat-piece seat-black" aria-hidden="true">♚</span><div class="seat-copy"><strong>Pretas</strong><span data-black-state>Esperando a vez</span></div><div class="captured-pieces" data-black-captured aria-label="Peças capturadas pelas pretas"></div><span class="seat-turn-indicator" aria-hidden="true"></span></section>
+          <div class="chess-board-wrap"><div class="chess-board" data-board role="grid" aria-label="Tabuleiro de xadrez"></div></div>
+          <section class="chess-player-seat" data-player-card="white" aria-label="Jogador das brancas"><span class="seat-piece seat-white" aria-hidden="true">♔</span><div class="seat-copy"><strong>Brancas</strong><span data-white-state>Jogam primeiro</span></div><div class="captured-pieces" data-white-captured aria-label="Peças capturadas pelas brancas"></div><span class="seat-turn-indicator" aria-hidden="true"></span></section>
+        </div>
+
+        <aside class="chess-sidebar" aria-label="Informações da partida">
+          <section class="chess-status-card"><span class="chess-status-icon" data-status-icon aria-hidden="true">♙</span><div><p class="chess-kicker">ESTADO DA PARTIDA</p><h2 data-game-status aria-live="polite">Vez das brancas</h2><p data-status-detail>Escolha uma peça para ver seus movimentos.</p></div></section>
+          <section class="chess-side-card chess-history-card"><div class="chess-card-heading"><h2>Movimentos</h2><span data-move-count>0 lances</span></div><div class="chess-move-list" data-move-list aria-live="polite"><p class="chess-empty-history">A partida começa com 1. e4, 1. d4 ou qualquer jogada legal.</p></div></section>
+          <section class="chess-side-card chess-captured-summary"><h2>Material capturado</h2><p><strong>Brancas</strong><span data-white-material>—</span></p><p><strong>Pretas</strong><span data-black-material>—</span></p></section>
+          <div class="chess-side-actions"><button class="chess-new-game" type="button" data-new-game>＋ Nova partida</button><p>Tabuleiro local · sem conta · sem conexão</p></div>
+        </aside>
+      </div>
+      <p class="chess-keyboard-tip">Dica: clique em uma peça para ver os lances legais. Use as setas do teclado para navegar pelo tabuleiro.</p>
+    </section>
+    <div class="ad-slot ad-slot--exclusive-game" data-ad-slot="cv-xadrez-after-game" aria-hidden="true"></div>
+  </div></main>
+
+  <dialog class="chess-dialog" data-promotion-dialog aria-labelledby="promotion-title">
+    <form method="dialog"><button class="dialog-close" aria-label="Fechar" value="cancel">×</button></form>
+    <p class="chess-kicker">PROMOÇÃO DE PEÃO</p><h2 id="promotion-title">Escolha sua peça</h2><p>O peão chegou ao outro lado do tabuleiro.</p>
+    <div class="promotion-options"><button type="button" data-promote="Q"><span>♕</span><strong>Dama</strong></button><button type="button" data-promote="R"><span>♖</span><strong>Torre</strong></button><button type="button" data-promote="B"><span>♗</span><strong>Bispo</strong></button><button type="button" data-promote="N"><span>♘</span><strong>Cavalo</strong></button></div>
+  </dialog>
+
+  <dialog class="chess-dialog chess-settings-dialog" data-settings-dialog aria-labelledby="settings-title">
+    <form method="dialog"><button class="dialog-close" aria-label="Fechar" value="cancel">×</button></form>
+    <p class="chess-kicker">PREFERÊNCIAS DA PARTIDA</p><h2 id="settings-title">Configurações</h2>
+    <label class="setting-row"><span><strong>Girar tabuleiro a cada jogada</strong><small>Deixa o jogador da vez na parte inferior.</small></span><input type="checkbox" data-setting-rotate checked></label>
+    <label class="setting-row"><span><strong>Mostrar movimentos legais</strong><small>Destaca as casas para onde a peça pode ir.</small></span><input type="checkbox" data-setting-moves checked></label>
+    <label class="setting-row"><span><strong>Mostrar coordenadas</strong><small>Exibe letras e números nas bordas.</small></span><input type="checkbox" data-setting-coordinates checked></label>
+    <button class="button button-primary settings-done" type="button" data-settings-close>Pronto</button>
+  </dialog>
+
+  <footer class="site-footer"><div class="footer-inner"><div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div><nav class="footer-nav" aria-label="Navegação do rodapé"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central Gamer</a><a href="../../sobre.html">Sobre</a><a href="../../contato.html">Contato</a><a href="../../privacidade.html">Privacidade</a><a href="../../termos.html">Termos</a><a href="../../perfil.html">Perfil</a></nav></div></footer>
+</body></html>

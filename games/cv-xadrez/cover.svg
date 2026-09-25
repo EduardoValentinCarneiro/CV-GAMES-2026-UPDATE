@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">CV XADREZ</title>
+  <desc id="desc">Um tabuleiro de xadrez verde e marfim com peças pretas e brancas.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1420"/><stop offset="1" stop-color="#1a2d34"/></linearGradient>
+    <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#b8f2cf"/><stop offset="1" stop-color="#75d79d"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="9" flood-color="#000" flood-opacity=".42"/></filter>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <circle cx="730" cy="260" r="270" fill="#56b884" opacity=".08"/>
+  <g transform="translate(610 75) rotate(8 150 180)" filter="url(#shadow)">
+    <rect x="0" y="0" width="304" height="304" rx="14" fill="#e8e1cf" stroke="#b9c8b1" stroke-width="8"/>
+    <g transform="translate(12 12)">
+      <path fill="#73927f" d="M38 0h38v38H38zM114 0h38v38h-38zM190 0h38v38h-38zM0 38h38v38H0zM76 38h38v38H76zM152 38h38v38h-38zM228 38h38v38h-38zM38 76h38v38H38zM114 76h38v38h-38zM190 76h38v38h-38zM0 114h38v38H0zM76 114h38v38H76zM152 114h38v38h-38zM228 114h38v38h-38zM38 152h38v38H38zM114 152h38v38h-38zM190 152h38v38h-38zM0 190h38v38H0zM76 190h38v38H76zM152 190h38v38h-38zM228 190h38v38h-38zM38 228h38v38H38zM114 228h38v38h-38zM190 228h38v38h-38z"/>
+    </g>
+    <text x="55" y="78" fill="#fffdf5" font-family="serif" font-size="54" text-anchor="middle" stroke="#435064" stroke-width="1">♜</text>
+    <text x="132" y="78" fill="#222d3d" font-family="serif" font-size="54" text-anchor="middle">♞</text>
+    <text x="208" y="78" fill="#fffdf5" font-family="serif" font-size="54" text-anchor="middle" stroke="#435064" stroke-width="1">♝</text>
+    <text x="55" y="230" fill="#fffdf5" font-family="serif" font-size="60" text-anchor="middle" stroke="#435064" stroke-width="1">♕</text>
+    <text x="132" y="153" fill="#222d3d" font-family="serif" font-size="57" text-anchor="middle">♟</text>
+    <text x="208" y="230" fill="#222d3d" font-family="serif" font-size="64" text-anchor="middle">♔</text>
+  </g>
+  <text x="68" y="143" fill="#a6ebc5" font-family="Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="6">ESTRATÉGIA EM DOIS LADOS</text>
+  <text x="60" y="256" fill="#f6f8f5" font-family="Arial,sans-serif" font-size="91" font-weight="900" letter-spacing="-6">CV</text>
+  <text x="58" y="350" fill="url(#gold)" font-family="Arial,sans-serif" font-size="96" font-weight="900" letter-spacing="-6">XADREZ</text>
+  <text x="70" y="405" fill="#c0cfd0" font-family="Arial,sans-serif" font-size="22" font-weight="600" letter-spacing="2">2 JOGADORES · 1 DISPOSITIVO</text>
+  <text x="72" y="478" fill="#91e1b1" font-family="Arial,sans-serif" font-size="16" font-weight="800" letter-spacing="3">UM JOGO CV GAMES</text>
+</svg>
