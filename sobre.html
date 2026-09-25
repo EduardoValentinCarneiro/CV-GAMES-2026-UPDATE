@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça o CV GAMES, portal de jogos online, downloads e jogos exclusivos para jogar no navegador.">
+  <meta property="og:title" content="Sobre o CV GAMES">
+  <meta property="og:description" content="Conheça o portal CV GAMES e seus jogos exclusivos para navegador.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/sobre.html">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sobre o CV GAMES">
+  <meta name="twitter:description" content="Conheça o portal CV GAMES e seus jogos exclusivos para navegador.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>Sobre o CV GAMES | Jogos Online e Exclusivos</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/sobre.html">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/institutional.css">
+  <script src="data/jogos.js" defer></script>
+  <script src="js/institutional.js" defer></script>
+</head>
+<body class="institutional-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="CV GAMES — Início"><img src="img/onconee.png" alt=""><span>CV GAMES</span></a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html" aria-label="Central Gamer">Central</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-button" href="index.html?favoritos=1#jogos" aria-label="Ver favoritos" title="Ver favoritos"><span class="favorite-icon" aria-hidden="true">♥</span><span>Favoritos</span></a>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="institutional-main">
+    <div class="container">
+      <section class="institutional-hero" aria-labelledby="sobre-title">
+        <p class="eyebrow">Conheça o projeto</p>
+        <h1 id="sobre-title">Sobre o CV GAMES</h1>
+        <p>CV GAMES é um portal para descobrir jogos online, encontrar conteúdos relacionados e acessar jogos próprios que funcionam diretamente no navegador.</p>
+      </section>
+
+      <div class="institutional-content">
+        <section class="institutional-section" aria-labelledby="portal-title">
+          <h2 id="portal-title">Um portal para jogar e descobrir</h2>
+          <p>O catálogo reúne jogos disponíveis no navegador, opções leves para diferentes dispositivos e uma área de downloads com os destinos já informados no portal.</p>
+          <p>Alguns conteúdos são disponibilizados por serviços de terceiros; nesses casos, a experiência e a disponibilidade dependem do respectivo provedor.</p>
+        </section>
+
+        <section class="institutional-section" aria-labelledby="exclusivos-title">
+          <h2 id="exclusivos-title">Jogos exclusivos</h2>
+          <p>O portal reúne experiências próprias e jogos criados pela comunidade. CV DODGE, CV NEON BREAKER, CV STARFALL, CV XADREZ, CV JOGO DA VELHA e CV QUADRADOS são exclusivos do CV GAMES; NEXUS: Rota Zero é uma aventura original criada por educvv, disponível para jogar no navegador.</p>
+          <div class="exclusive-game-grid" data-exclusive-games>
+            <noscript>
+              <a class="exclusive-game-card" href="games/cv-dodge/index.html">CV DODGE</a>
+              <a class="exclusive-game-card" href="games/cv-neon-breaker/index.html">CV NEON BREAKER</a>
+              <a class="exclusive-game-card" href="games/nexus-rota-zero/index.html">NEXUS: Rota Zero</a>
+              <a class="exclusive-game-card" href="games/cv-starfall/index.html">CV STARFALL</a>
+              <a class="exclusive-game-card" href="games/cv-xadrez/index.html">CV XADREZ</a>
+              <a class="exclusive-game-card" href="games/cv-jogo-da-velha/index.html">CV JOGO DA VELHA</a>
+              <a class="exclusive-game-card" href="games/cv-quadrados/index.html">CV QUADRADOS</a>
+            </noscript>
+          </div>
+        </section>
+
+        <section class="institutional-section" aria-labelledby="navegacao-title">
+          <h2 id="navegacao-title">Navegação simples</h2>
+          <p>Use a Home para pesquisar e filtrar o catálogo, salve favoritos neste navegador ou visite a área de Downloads. O Perfil acompanha apenas dados locais, sem conta online.</p>
+          <div class="institutional-links">
+            <a class="button button-primary" href="index.html#jogos">Explorar jogos</a>
+            <a class="button button-secondary" href="baixar.html">Ver downloads</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="index.html">Início</a><a href="index.html#jogos">Jogos</a><a href="baixar.html">Downloads</a><a href="central.html">Central Gamer</a><a href="sobre.html" aria-current="page">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="perfil.html">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
