@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Jogue CV QUADRADOS com outra pessoa no mesmo dispositivo. Conecte os pontos, feche quadrados e vença no tabuleiro 5×5.">
+  <meta property="og:title" content="CV QUADRADOS — Jogo Exclusivo | CV GAMES">
+  <meta property="og:description" content="Um duelo local de estratégia: conecte pontos, complete quadrados e marque mais territórios. A partida é em um tabuleiro 5×5.">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="CV GAMES"><meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/games/cv-quadrados/"><meta property="og:image" content="https://cvgames.github.io/CV-GAMES/games/cv-quadrados/cover.svg"><meta property="og:image:alt" content="Capa do jogo CV QUADRADOS">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="CV QUADRADOS — Jogo Exclusivo | CV GAMES"><meta name="twitter:description" content="Conecte pontos, feche quadrados e dispute o tabuleiro 5×5 com outra pessoa."><meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/games/cv-quadrados/cover.svg">
+  <title>CV QUADRADOS — Jogo Exclusivo | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/games/cv-quadrados/">
+  <link rel="icon" href="../../img/incon.png" type="image/png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"CV QUADRADOS","url":"https://cvgames.github.io/CV-GAMES/games/cv-quadrados/","image":"https://cvgames.github.io/CV-GAMES/games/cv-quadrados/cover.svg","description":"Jogo de ligar pontos e completar quadrados para duas pessoas, no mesmo dispositivo.","genre":"Estratégia, Puzzle","gamePlatform":"Navegador","inLanguage":"pt-BR"}</script>
+  <script>try { const theme = localStorage.getItem('cv-games-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch { /* Mantém o tema escuro. */ }</script>
+  <link rel="stylesheet" href="../../css/home.css"><link rel="stylesheet" href="../../css/site-dialog.css"><link rel="stylesheet" href="game.css">
+  <script src="../../data/jogos.js" defer></script><script src="../../js/stats.js" defer></script><script src="../../js/achievements.js" defer></script><script src="../../js/site-dialog.js" defer></script><script src="../fullscreen.js" defer></script><script src="game.js" defer></script>
+</head>
+<body class="squares-page">
+  <a class="skip-link" href="#conteudo">Pular para o jogo</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="CV GAMES — Início"><img src="../../img/onconee.png" alt=""><span>CV GAMES</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+    <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central</a><a href="../../perfil.html">Perfil</a></nav>
+    <div class="header-actions"><button class="favorite-button" type="button" data-game-favorite aria-pressed="false" aria-label="Adicionar CV QUADRADOS aos favoritos" title="Adicionar aos favoritos"><span class="favorite-icon" aria-hidden="true">♡</span><span class="favorite-count" data-favorite-count>0</span><span data-favorite-label>Favoritar</span></button><button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button></div>
+  </div></header>
+
+  <main class="squares-main" id="conteudo"><div class="container">
+    <a class="squares-back" href="../../index.html#jogos">← Voltar para Jogos</a>
+    <section class="squares-intro"><div><p class="eyebrow">✦ EXCLUSIVO CV GAMES</p><h1>CV <span>QUADRADOS</span></h1><p>Trace uma linha. Feche um quadrado. Conquiste o tabuleiro.</p></div><span class="squares-intro-mark" aria-hidden="true">▦</span></section>
+
+    <section class="squares-lobby" data-lobby aria-labelledby="lobby-title">
+      <div class="squares-lobby-copy"><p class="squares-kicker">ESCOLHA SUA PARTIDA</p><h2>Quem vai jogar?</h2><p>Dispute o tabuleiro com alguém no mesmo computador, celular ou tablet.</p></div>
+      <div class="squares-mode-grid">
+        <button class="squares-mode-card squares-mode-local" type="button" data-start-local><span class="squares-mode-icon" aria-hidden="true"><i>A</i><b>B</b></span><span class="squares-mode-tag">DISPONÍVEL AGORA</span><strong>2 jogadores locais</strong><span>Alterne os lances no mesmo dispositivo. Quem completar um quadrado marca o ponto e joga novamente.</span><b>Começar partida <span aria-hidden="true">→</span></b></button>
+        <button class="squares-mode-card squares-mode-soon" type="button" disabled><span class="squares-mode-icon" aria-hidden="true">✦</span><span class="squares-mode-tag">EM BREVE</span><strong>Jogador vs. computador</strong><span>Enfrente um adversário controlado pelo computador.</span><b>Modo em desenvolvimento</b></button>
+      </div>
+      <p class="squares-lobby-footnote">Tabuleiro com 5×5 quadrados. Quando todos estiverem fechados, vence quem tiver conquistado mais.</p>
+    </section>
+
+    <section class="squares-game-view" data-game-view data-fullscreen-root id="squares-fullscreen" hidden aria-label="Partida de CV QUADRADOS">
+      <div class="squares-toolbar">
+        <div class="squares-turn-card" data-live-turn data-player="a"><span class="squares-turn-swatch" data-turn-swatch aria-hidden="true"></span><span><small>VEZ DE JOGAR</small><strong data-turn-label>Jogador Azul</strong></span></div>
+        <div class="squares-toolbar-actions">
+          <button class="squares-tool-button" type="button" data-undo disabled title="Desfazer última linha">↶ <span>Desfazer</span></button>
+          <button class="squares-tool-button" type="button" data-new-game>＋ <span>Nova partida</span></button>
+          <button class="squares-tool-button squares-fullscreen-button" type="button" data-fullscreen-button="#squares-fullscreen" aria-pressed="false">⛶ Tela cheia</button>
+        </div>
+      </div>
+
+      <div class="squares-layout">
+        <section class="squares-play-area" aria-label="Tabuleiro e placar">
+          <div class="squares-scoreboard" aria-label="Quadrados conquistados">
+            <div class="squares-player-card is-active" data-player-card="a" data-player="a"><span class="squares-player-swatch" aria-hidden="true"></span><span class="squares-player-copy"><strong>Jogador Azul</strong><small data-a-state>Começa primeiro</small></span><b data-a-score>0</b></div>
+            <div class="squares-score-middle"><strong data-boxes-count>0<span>/25</span></strong><small>QUADRADOS</small></div>
+            <div class="squares-player-card" data-player-card="b" data-player="b"><span class="squares-player-swatch" aria-hidden="true"></span><span class="squares-player-copy"><strong>Jogador Coral</strong><small data-b-state>Esperando a vez</small></span><b data-b-score>0</b></div>
+          </div>
+          <div class="squares-board-frame"><svg class="squares-board" data-board viewBox="0 0 620 620" role="group" aria-label="Tabuleiro 5 por 5. Use as setas para escolher uma linha e Enter para traçá-la." focusable="false"></svg></div>
+          <div class="squares-board-foot"><span><i class="squares-key squares-key-a" aria-hidden="true"></i> Azul</span><span><i class="squares-key squares-key-b" aria-hidden="true"></i> Coral</span><span class="squares-bonus-note" data-bonus-note hidden>Fechou quadrado! Jogue novamente.</span></div>
+        </section>
+
+        <aside class="squares-sidebar" aria-label="Informações da partida">
+          <section class="squares-status-card" data-status-card><span class="squares-status-mark" data-status-mark aria-hidden="true">●</span><div><p class="squares-kicker">ESTADO DA PARTIDA</p><h2 data-game-status aria-live="polite">Pronto para jogar</h2><p data-status-detail>Escolha uma linha entre dois pontos vizinhos.</p></div></section>
+          <section class="squares-progress-card"><div class="squares-card-heading"><h2>Território conquistado</h2><span data-progress-label>0 de 25</span></div><div class="squares-progress-track" role="progressbar" aria-label="Quadrados preenchidos" aria-valuemin="0" aria-valuemax="25" aria-valuenow="0" data-progress><span data-progress-fill></span></div><p>Feche os quatro lados para conquistar um quadrado.</p></section>
+          <section class="squares-side-card squares-history-card"><div class="squares-card-heading"><h2>Últimas jogadas</h2><span data-move-count>0 linhas</span></div><ol class="squares-move-list" data-move-list><li class="squares-empty-history">O histórico aparece aqui.</li></ol></section>
+          <section class="squares-side-card squares-how-to"><h2>Como jogar</h2><p>Na sua vez, trace uma linha entre dois pontos vizinhos. Quem fechar um ou mais quadrados marca os pontos e joga de novo. Se nenhuma peça for conquistada, a vez passa. Há 25 quadrados no tabuleiro.</p></section>
+        </aside>
+      </div>
+      <p class="squares-keyboard-tip">Use o mouse, toque em uma linha ou navegue com as setas e pressione Enter.</p>
+    </section>
+    <div class="ad-slot ad-slot--exclusive-game" data-ad-slot="cv-quadrados-after-game" aria-hidden="true"></div>
+  </div></main>
+
+  <footer class="site-footer"><div class="footer-inner"><div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div><nav class="footer-nav" aria-label="Navegação do rodapé"><a href="../../index.html">Início</a><a href="../../index.html#jogos">Jogos</a><a href="../../baixar.html">Downloads</a><a href="../../central.html">Central Gamer</a><a href="../../sobre.html">Sobre</a><a href="../../contato.html">Contato</a><a href="../../privacidade.html">Privacidade</a><a href="../../termos.html">Termos</a><a href="../../perfil.html">Perfil</a></nav></div></footer>
+</body></html>
