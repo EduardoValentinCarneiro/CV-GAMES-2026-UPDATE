@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teste controle, teclado e mouse, e acompanhe sua sessão com o Timer Gamer diretamente no navegador pelo CV GAMES.">
+  <meta property="og:title" content="Ferramentas Gamer | CV GAMES">
+  <meta property="og:description" content="Controle, teclado, mouse e Timer Gamer: ferramentas locais do CV GAMES.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/ferramentas.html">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ferramentas Gamer | CV GAMES">
+  <meta name="twitter:description" content="Controle, teclado, mouse e Timer Gamer: ferramentas locais do CV GAMES.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>Ferramentas Gamer | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/ferramentas.html">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Ferramentas Gamer | CV GAMES",
+      "url": "https://cvgames.github.io/CV-GAMES/ferramentas.html",
+      "description": "Utilidades locais para controle, teclado, mouse e acompanhamento de tempo.",
+      "inLanguage": "pt-BR"
+    }
+  </script>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/central.css">
+  <link rel="stylesheet" href="css/ferramentas.css">
+  <script src="js/institutional.js" defer></script>
+  <script src="js/ferramentas.js" defer></script>
+</head>
+<body class="central-page tools-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="CV GAMES — Início"><img src="img/onconee.png" alt=""><span>CV GAMES</span></a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html" aria-label="Central Gamer">Central</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-button" href="index.html?favoritos=1#jogos" aria-label="Ver favoritos" title="Ver favoritos"><span class="favorite-icon" aria-hidden="true">♥</span><span>Favoritos</span></a>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="central-main" data-tools-root>
+    <div class="container">
+      <a class="central-back" href="central.html#ferramentas">← Voltar para a Central Gamer</a>
+
+      <section class="central-hero tools-hero" aria-labelledby="tools-title">
+        <div class="central-hero-copy">
+          <p class="eyebrow">⚡ Utilidades Avançadas</p>
+          <h1 id="tools-title">🛠️ Ferramentas Gamer</h1>
+          <p class="central-lead">Utilidades simples para medir, calcular e acompanhar sua sessão diretamente no navegador.</p>
+          <p>Resultados são temporários e estimados quando o navegador não oferece uma medição exata. Nenhuma conta, identificador ou histórico é criado.</p>
+        </div>
+        <p class="central-hero-mark" aria-hidden="true">⚡</p>
+      </section>
+
+      <nav class="central-shortcuts tools-shortcuts" aria-label="Atalhos das ferramentas">
+        <a href="#gamepad"><span aria-hidden="true">🎮</span> Controle</a>
+        <a href="#teclado"><span aria-hidden="true">⌨️</span> Teclado</a>
+        <a href="#mouse"><span aria-hidden="true">🖱️</span> Mouse</a>
+        <a href="#timer"><span aria-hidden="true">⏱️</span> Timer</a>
+      </nav>
+
+      <section class="central-section tools-section" id="gamepad" aria-labelledby="gamepad-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Entrada local</p>
+            <h2 id="gamepad-title">🎮 Teste de Controle</h2>
+          </div>
+          <p>Leia botões, analógicos e informações que o navegador disponibiliza para controles USB ou Bluetooth.</p>
+        </div>
+
+        <article class="tool-panel tool-panel--wide gamepad-panel">
+          <div class="tool-panel-heading"><h3>Controle conectado</h3><span class="tool-badge">Gamepad API</span></div>
+          <p class="tool-status" data-gamepad-status role="status" aria-live="polite">Nenhum controle detectado. Conecte um controle USB ou Bluetooth e pressione algum botão.</p>
+          <p class="tool-note">Alguns navegadores só disponibilizam um controle após uma interação com ele nesta página.</p>
+
+          <div class="gamepad-selector-wrap" data-gamepad-selector-wrap hidden>
+            <label for="gamepad-select">Controle visualizado<select id="gamepad-select" data-gamepad-select aria-label="Selecionar controle conectado"></select></label>
+            <button class="button button-secondary" type="button" data-gamepad-vibrate hidden>〰 Testar vibração</button>
+          </div>
+
+          <div class="gamepad-details" data-gamepad-details hidden>
+            <dl class="tool-definition-list gamepad-summary">
+              <div><dt>Nome informado</dt><dd data-gamepad-name>—</dd></div>
+              <div><dt>Índice</dt><dd data-gamepad-index>—</dd></div>
+              <div><dt>Botões</dt><dd data-gamepad-button-count>—</dd></div>
+              <div><dt>Eixos</dt><dd data-gamepad-axis-count>—</dd></div>
+              <div><dt>Mapping</dt><dd data-gamepad-mapping>—</dd></div>
+            </dl>
+
+            <div class="gamepad-deadzone-row">
+              <label for="gamepad-deadzone">Deadzone visual<input id="gamepad-deadzone" type="range" min="0.05" max="0.30" step="0.01" value="0.10" data-gamepad-deadzone></label>
+              <strong data-gamepad-deadzone-value>0,10</strong>
+            </div>
+            <p class="tool-note gamepad-drift" data-gamepad-drift>Sem movimento acima da deadzone.</p>
+
+            <div class="gamepad-layout">
+              <div class="gamepad-visual" aria-hidden="true">
+                <div class="gamepad-shoulders">
+                  <span class="gamepad-control" data-gamepad-control="4">B4</span>
+                  <span class="gamepad-control" data-gamepad-control="6">B6</span>
+                  <span class="gamepad-control" data-gamepad-control="7">B7</span>
+                  <span class="gamepad-control" data-gamepad-control="5">B5</span>
+                </div>
+                <div class="gamepad-body">
+                  <div class="gamepad-stick" data-gamepad-stick="left"><span class="gamepad-stick-thumb" data-gamepad-stick-thumb="left"></span><strong>L</strong><small data-gamepad-left-axis>X: 0,00 · Y: 0,00</small></div>
+                  <div class="gamepad-dpad">
+                    <span class="gamepad-control" data-gamepad-control="12">↑<small>B12</small></span>
+                    <span class="gamepad-control" data-gamepad-control="14">←<small>B14</small></span>
+                    <span class="gamepad-control" data-gamepad-control="13">↓<small>B13</small></span>
+                    <span class="gamepad-control" data-gamepad-control="15">→<small>B15</small></span>
+                  </div>
+                  <div class="gamepad-center-buttons"><span class="gamepad-control" data-gamepad-control="8">B8</span><span class="gamepad-control" data-gamepad-control="9">B9</span></div>
+                  <div class="gamepad-stick" data-gamepad-stick="right"><span class="gamepad-stick-thumb" data-gamepad-stick-thumb="right"></span><strong>R</strong><small data-gamepad-right-axis>X: 0,00 · Y: 0,00</small></div>
+                  <div class="gamepad-face-buttons">
+                    <span class="gamepad-control" data-gamepad-control="3">B3</span>
+                    <span class="gamepad-control" data-gamepad-control="2">B2</span>
+                    <span class="gamepad-control" data-gamepad-control="0">B0</span>
+                    <span class="gamepad-control" data-gamepad-control="1">B1</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="gamepad-live-data">
+                <div>
+                  <h4>Botões detectados</h4>
+                  <div class="gamepad-raw-grid" data-gamepad-raw-buttons></div>
+                </div>
+                <div>
+                  <h4>Eixos detectados</h4>
+                  <div class="gamepad-axis-list" data-gamepad-axis-list></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="central-section tools-section" id="teclado" aria-labelledby="keyboard-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Entrada local</p>
+            <h2 id="keyboard-title">⌨️ Teste de Teclado</h2>
+          </div>
+          <p>Veja em tempo real as teclas físicas detectadas nesta página, sem salvar sequências ou texto digitado.</p>
+        </div>
+
+        <article class="tool-panel tool-panel--wide keyboard-panel">
+          <div class="keyboard-layout" data-keyboard-layout role="img" aria-label="Visual simplificado de teclado">
+            <div class="keyboard-row keyboard-row--function"><span class="keyboard-key" data-key-code="Escape">Esc</span><span class="keyboard-key" data-key-code="F1">F1</span><span class="keyboard-key" data-key-code="F2">F2</span><span class="keyboard-key" data-key-code="F3">F3</span><span class="keyboard-key" data-key-code="F4">F4</span><span class="keyboard-key" data-key-code="F5">F5</span><span class="keyboard-key" data-key-code="F6">F6</span><span class="keyboard-key" data-key-code="F7">F7</span><span class="keyboard-key" data-key-code="F8">F8</span><span class="keyboard-key" data-key-code="F9">F9</span><span class="keyboard-key" data-key-code="F10">F10</span><span class="keyboard-key" data-key-code="F11">F11</span><span class="keyboard-key" data-key-code="F12">F12</span></div>
+            <div class="keyboard-row"><span class="keyboard-key" data-key-code="Backquote">`</span><span class="keyboard-key" data-key-code="Digit1">1</span><span class="keyboard-key" data-key-code="Digit2">2</span><span class="keyboard-key" data-key-code="Digit3">3</span><span class="keyboard-key" data-key-code="Digit4">4</span><span class="keyboard-key" data-key-code="Digit5">5</span><span class="keyboard-key" data-key-code="Digit6">6</span><span class="keyboard-key" data-key-code="Digit7">7</span><span class="keyboard-key" data-key-code="Digit8">8</span><span class="keyboard-key" data-key-code="Digit9">9</span><span class="keyboard-key" data-key-code="Digit0">0</span><span class="keyboard-key" data-key-code="Minus">-</span><span class="keyboard-key" data-key-code="Equal">=</span><span class="keyboard-key keyboard-key--wide" data-key-code="Backspace">Backspace</span></div>
+            <div class="keyboard-row"><span class="keyboard-key keyboard-key--wide" data-key-code="Tab">Tab</span><span class="keyboard-key" data-key-code="KeyQ">Q</span><span class="keyboard-key" data-key-code="KeyW">W</span><span class="keyboard-key" data-key-code="KeyE">E</span><span class="keyboard-key" data-key-code="KeyR">R</span><span class="keyboard-key" data-key-code="KeyT">T</span><span class="keyboard-key" data-key-code="KeyY">Y</span><span class="keyboard-key" data-key-code="KeyU">U</span><span class="keyboard-key" data-key-code="KeyI">I</span><span class="keyboard-key" data-key-code="KeyO">O</span><span class="keyboard-key" data-key-code="KeyP">P</span><span class="keyboard-key" data-key-code="BracketLeft">[</span><span class="keyboard-key" data-key-code="BracketRight">]</span><span class="keyboard-key" data-key-code="Backslash">\\</span></div>
+            <div class="keyboard-row"><span class="keyboard-key keyboard-key--wide" data-key-code="CapsLock">Caps</span><span class="keyboard-key" data-key-code="KeyA">A</span><span class="keyboard-key" data-key-code="KeyS">S</span><span class="keyboard-key" data-key-code="KeyD">D</span><span class="keyboard-key" data-key-code="KeyF">F</span><span class="keyboard-key" data-key-code="KeyG">G</span><span class="keyboard-key" data-key-code="KeyH">H</span><span class="keyboard-key" data-key-code="KeyJ">J</span><span class="keyboard-key" data-key-code="KeyK">K</span><span class="keyboard-key" data-key-code="KeyL">L</span><span class="keyboard-key" data-key-code="Semicolon">;</span><span class="keyboard-key" data-key-code="Quote">'</span><span class="keyboard-key keyboard-key--wide" data-key-code="Enter">Enter</span></div>
+            <div class="keyboard-row"><span class="keyboard-key keyboard-key--wide-2" data-key-code="ShiftLeft">Shift</span><span class="keyboard-key" data-key-code="KeyZ">Z</span><span class="keyboard-key" data-key-code="KeyX">X</span><span class="keyboard-key" data-key-code="KeyC">C</span><span class="keyboard-key" data-key-code="KeyV">V</span><span class="keyboard-key" data-key-code="KeyB">B</span><span class="keyboard-key" data-key-code="KeyN">N</span><span class="keyboard-key" data-key-code="KeyM">M</span><span class="keyboard-key" data-key-code="Comma">,</span><span class="keyboard-key" data-key-code="Period">.</span><span class="keyboard-key" data-key-code="Slash">/</span><span class="keyboard-key keyboard-key--wide-2" data-key-code="ShiftRight">Shift</span></div>
+            <div class="keyboard-row keyboard-row--bottom"><span class="keyboard-key keyboard-key--wide" data-key-code="ControlLeft">Ctrl</span><span class="keyboard-key" data-key-code="MetaLeft">Meta</span><span class="keyboard-key keyboard-key--wide" data-key-code="AltLeft">Alt</span><span class="keyboard-key keyboard-key--space" data-key-code="Space">Espaço</span><span class="keyboard-key keyboard-key--wide" data-key-code="AltRight">Alt</span><span class="keyboard-key keyboard-key--wide" data-key-code="ControlRight">Ctrl</span><span class="keyboard-key" data-key-code="ArrowLeft">←</span><span class="keyboard-key" data-key-code="ArrowUp">↑</span><span class="keyboard-key" data-key-code="ArrowDown">↓</span><span class="keyboard-key" data-key-code="ArrowRight">→</span></div>
+          </div>
+
+          <div class="input-status-grid" aria-label="Estado atual do teclado">
+            <div><span>Teclas pressionadas agora</span><strong data-keyboard-current>Nenhuma</strong></div>
+            <div><span>Última tecla detectada</span><strong data-keyboard-last>—</strong></div>
+            <div><span>Teclas simultâneas</span><strong data-keyboard-count>0</strong></div>
+          </div>
+          <p class="tool-status" data-keyboard-status role="status">Pressione teclas fora de campos de texto para testar.</p>
+          <p class="tool-note input-touch-note">Em dispositivos touch, a utilidade do teste de teclado pode ser limitada.</p>
+        </article>
+      </section>
+
+      <section class="central-section tools-section" id="mouse" aria-labelledby="mouse-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Entrada local</p>
+            <h2 id="mouse-title">🖱️ Teste de Mouse</h2>
+          </div>
+          <p>Mova, clique e use a roda somente dentro da área abaixo. Os contadores existem apenas durante esta visita.</p>
+        </div>
+
+        <article class="tool-panel tool-panel--wide mouse-panel">
+          <div class="mouse-test-area" data-mouse-area tabindex="0" aria-label="Área de teste do mouse">
+            <span class="mouse-cursor-marker" data-mouse-cursor aria-hidden="true"></span>
+            <p><strong>Mova e clique dentro desta área.</strong> O clique direito é bloqueado somente aqui para que possa ser testado.</p>
+            <small data-mouse-area-note>O cursor será mostrado quando entrar na área.</small>
+          </div>
+
+          <div class="mouse-button-grid" aria-label="Botões e contadores do mouse">
+            <div><span>Esquerdo</span><strong data-mouse-button-state="0">Solto</strong><small>Cliques: <b data-mouse-count="0">0</b></small></div>
+            <div><span>Meio</span><strong data-mouse-button-state="1">Solto</strong><small>Cliques: <b data-mouse-count="1">0</b></small></div>
+            <div><span>Direito</span><strong data-mouse-button-state="2">Solto</strong><small>Cliques: <b data-mouse-count="2">0</b></small></div>
+            <div><span>Mouse 4</span><strong data-mouse-button-state="3">Solto</strong><small>Cliques: <b data-mouse-count="3">0</b></small></div>
+            <div><span>Mouse 5</span><strong data-mouse-button-state="4">Solto</strong><small>Cliques: <b data-mouse-count="4">0</b></small></div>
+          </div>
+
+          <div class="mouse-info-grid" aria-label="Movimento e roda do mouse">
+            <div><span>Posição relativa</span><strong data-mouse-position>X: — · Y: —</strong></div>
+            <div><span>Movimento</span><strong data-mouse-movement>X: 0 · Y: 0</strong></div>
+            <div><span>Roda</span><strong data-mouse-wheel>Ainda não usada</strong></div>
+          </div>
+          <p class="tool-status" data-mouse-status role="status">Pronto para testar dentro da área.</p>
+          <p class="tool-note input-touch-note">Em dispositivos touch, a utilidade do teste de mouse pode ser limitada.</p>
+        </article>
+      </section>
+
+      <section class="central-section tools-section" id="timer" aria-labelledby="timer-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Sessão</p>
+            <h2 id="timer-title">⏱️ Timer Gamer</h2>
+          </div>
+          <p>O tempo é calculado por timestamps reais para continuar correto após a aba perder foco.</p>
+        </div>
+
+        <div class="tools-grid">
+          <article class="tool-panel" aria-labelledby="stopwatch-title">
+            <div class="tool-panel-heading"><h3 id="stopwatch-title">Cronômetro</h3><span class="tool-badge">Sessão atual</span></div>
+            <p class="time-display" data-stopwatch-display aria-label="Tempo do cronômetro">00:00.000</p>
+            <div class="tool-actions" aria-label="Controles do cronômetro">
+              <button class="button button-primary" type="button" data-stopwatch-start>▶ Iniciar</button>
+              <button class="button button-secondary" type="button" data-stopwatch-pause disabled>⏸ Pausar</button>
+              <button class="button button-secondary" type="button" data-stopwatch-reset>↺ Zerar</button>
+              <button class="button button-secondary" type="button" data-stopwatch-lap disabled>🏁 Volta</button>
+            </div>
+            <p class="tool-status" data-stopwatch-status role="status">Pronto para iniciar.</p>
+            <ol class="lap-list" data-stopwatch-laps aria-label="Voltas registradas"></ol>
+          </article>
+
+          <article class="tool-panel" aria-labelledby="countdown-title">
+            <div class="tool-panel-heading"><h3 id="countdown-title">Timer regressivo</h3><span class="tool-badge">Alarme local</span></div>
+            <div class="countdown-inputs" aria-label="Definir duração">
+              <label>Horas<input type="number" min="0" max="23" inputmode="numeric" value="0" data-countdown-hours></label>
+              <label>Minutos<input type="number" min="0" max="59" inputmode="numeric" value="5" data-countdown-minutes></label>
+              <label>Segundos<input type="number" min="0" max="59" inputmode="numeric" value="0" data-countdown-seconds></label>
+            </div>
+            <div class="preset-list" aria-label="Presets do timer">
+              <button type="button" data-countdown-preset="60">1 min</button>
+              <button type="button" data-countdown-preset="300">5 min</button>
+              <button type="button" data-countdown-preset="600">10 min</button>
+              <button type="button" data-countdown-preset="900">15 min</button>
+              <button type="button" data-countdown-preset="1800">30 min</button>
+              <button type="button" data-countdown-preset="3600">60 min</button>
+            </div>
+            <p class="time-display time-display--countdown" data-countdown-display aria-label="Tempo restante">05:00</p>
+            <div class="tool-actions" aria-label="Controles do timer regressivo">
+              <button class="button button-primary" type="button" data-countdown-start>▶ Iniciar</button>
+              <button class="button button-secondary" type="button" data-countdown-pause disabled>⏸ Pausar</button>
+              <button class="button button-secondary" type="button" data-countdown-resume hidden>▶ Continuar</button>
+              <button class="button button-secondary" type="button" data-countdown-cancel disabled>✕ Cancelar</button>
+            </div>
+            <p class="tool-status" data-countdown-status role="status" aria-live="polite">Defina um tempo ou escolha um preset.</p>
+            <p class="tool-note">Ao chegar a 00:00, o arquivo local <code>music/sinal alarme.mp3</code> toca uma única vez.</p>
+            <audio data-countdown-alarm preload="auto" src="music/sinal%20alarme.mp3"></audio>
+          </article>
+        </div>
+      </section>
+
+      <aside class="central-notice tools-privacy-notice" aria-labelledby="tools-privacy-title">
+        <span aria-hidden="true">🔒</span>
+        <div>
+          <h2 id="tools-privacy-title">Privacidade das ferramentas</h2>
+          <p>Eventos de controle, teclado e mouse e os tempos do Timer Gamer são processados apenas nesta página durante a visita: não são armazenados nem enviados pelo CV GAMES.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="index.html">Início</a><a href="index.html#jogos">Jogos</a><a href="baixar.html">Downloads</a><a href="central.html">Central Gamer</a><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="perfil.html">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

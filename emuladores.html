@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carregue seus próprios arquivos NES compatíveis e jogue localmente no navegador pelo CV GAMES.">
+  <meta property="og:title" content="Emulador NES | CV GAMES">
+  <meta property="og:description" content="Carregue arquivos .nes compatíveis localmente. O CV GAMES não fornece ROMs comerciais.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/emuladores.html">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Emulador NES | CV GAMES">
+  <meta name="twitter:description" content="Carregue arquivos .nes compatíveis localmente. O CV GAMES não fornece ROMs comerciais.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>Emulador NES | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/emuladores.html">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Emulador NES | CV GAMES",
+      "url": "https://cvgames.github.io/CV-GAMES/emuladores.html",
+      "description": "Emulador local de NES para arquivos pessoais compatíveis e homebrews legalmente hospedados.",
+      "inLanguage": "pt-BR"
+    }
+  </script>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/central.css">
+  <script src="js/institutional.js" defer></script>
+  <script src="data/homebrew.js" defer></script>
+  <script src="lib/jsnes-2.1.0/jsnes.min.js" defer></script>
+  <script src="js/emulator-adapters.js" defer></script>
+  <script src="js/emulators.js" defer></script>
+</head>
+<body class="central-page emulators-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="CV GAMES — Início"><img src="img/onconee.png" alt=""><span>CV GAMES</span></a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html">Central</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-button" href="index.html?favoritos=1#jogos" aria-label="Ver favoritos" title="Ver favoritos"><span class="favorite-icon" aria-hidden="true">♥</span><span>Favoritos</span></a>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="central-main">
+    <div class="container">
+      <a class="central-back" href="central.html#emuladores">← Voltar para a Central Gamer</a>
+
+      <section class="central-hero central-hero--emulators" aria-labelledby="emulators-title">
+        <div class="central-hero-copy">
+          <p class="eyebrow">Emulador local</p>
+          <h1 id="emulators-title">🕹️ Emuladores</h1>
+          <p class="central-lead">Carregue um arquivo NES compatível do seu dispositivo ou experimente um homebrew legal da biblioteca do CV GAMES.</p>
+          <p>O CV GAMES não oferece ROMs comerciais, BIOS proprietária ou links para jogos comerciais.</p>
+        </div>
+        <p class="central-hero-mark" aria-hidden="true">🕹️</p>
+      </section>
+
+      <section class="central-section emulator-setup" aria-labelledby="setup-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Configuração</p>
+          <h2 id="setup-title">Carregar meu arquivo</h2>
+          </div>
+          <p>O arquivo é lido somente no navegador deste dispositivo; não há envio para servidor.</p>
+        </div>
+        <div class="emulator-step" id="carregar-arquivo">
+          <h3>1. Escolha o sistema</h3>
+          <div class="emulator-system-list" role="group" aria-label="Sistemas disponíveis">
+            <button class="emulator-system-option is-selected" type="button" data-system-option="nes" aria-pressed="true" aria-current="true">
+              <span aria-hidden="true">🟥</span>
+              <span class="emulator-system-copy"><strong>Nintendo Entertainment System (NES)</strong><small>Disponível</small></span>
+              <span class="central-status">.nes</span>
+            </button>
+            <button class="emulator-system-option is-coming-soon" type="button" disabled aria-disabled="true">
+              <span aria-hidden="true">🟩</span>
+              <span class="emulator-system-copy"><strong>Game Boy</strong><small>Indisponível temporariamente</small></span>
+              <span class="central-status">Em breve</span>
+            </button>
+            <button class="emulator-system-option is-coming-soon" type="button" disabled aria-disabled="true">
+              <span aria-hidden="true">🌈</span>
+              <span class="emulator-system-copy"><strong>Game Boy Color</strong><small>Indisponível temporariamente</small></span>
+              <span class="central-status">Em breve</span>
+            </button>
+            <button class="emulator-system-option is-coming-soon" type="button" disabled aria-disabled="true">
+              <span aria-hidden="true">🟪</span>
+              <span class="emulator-system-copy"><strong>Game Boy Advance</strong><small>Em breve</small></span>
+              <span class="central-status">Indisponível</span>
+            </button>
+            <button class="emulator-system-option is-coming-soon" type="button" disabled aria-disabled="true">
+              <span aria-hidden="true">🟦</span>
+              <span class="emulator-system-copy"><strong>SNES</strong><small>Em breve</small></span>
+              <span class="central-status">Indisponível</span>
+            </button>
+            <button class="emulator-system-option is-coming-soon" type="button" disabled aria-disabled="true">
+              <span aria-hidden="true">⬛</span>
+              <span class="emulator-system-copy"><strong>Mega Drive / Genesis</strong><small>Em breve</small></span>
+              <span class="central-status">Indisponível</span>
+            </button>
+          </div>
+          <p class="emulator-note">O NES é o único sistema disponível neste momento. Game Boy, Game Boy Color, Game Boy Advance, SNES e Mega Drive / Genesis continuam em breve.</p>
+        </div>
+
+        <div class="emulator-step">
+          <h3>2. Escolha seu arquivo</h3>
+          <label class="emulator-file-picker" for="rom-file">
+            <span aria-hidden="true">📂</span>
+            <span data-rom-picker-label>Selecionar jogo NES</span>
+            <input id="rom-file" class="emulator-file-input" data-rom-input type="file" accept=".nes,application/x-nes-rom" aria-describedby="rom-help">
+          </label>
+          <p id="rom-help" class="emulator-note" data-rom-help>Aceita arquivos .nes compatíveis, com até 8 MiB. O arquivo não é enviado para o CV GAMES.</p>
+          <p class="emulator-file-name" data-rom-file-name>Nenhum arquivo selecionado.</p>
+          <p class="emulator-status" data-emulator-status role="status" aria-live="polite">Nenhum jogo carregado. Selecione um arquivo compatível do seu dispositivo para começar.</p>
+        </div>
+      </section>
+
+      <section class="central-section" aria-labelledby="homebrew-cta-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Biblioteca legal</p>
+            <h2 id="homebrew-cta-title">🎁 Jogos gratuitos e legais</h2>
+          </div>
+          <p>Quer testar o emulador sem usar uma ROM comercial? Explore jogos homebrew disponibilizados legalmente.</p>
+        </div>
+        <div class="central-hero-actions">
+          <a class="button button-primary" href="homebrew.html">Ver jogos legais</a>
+          <a class="button button-secondary" href="#carregar-arquivo">📂 Carregar meu arquivo</a>
+        </div>
+      </section>
+
+      <section class="central-section emulator-player" id="jogar" data-emulator-player hidden aria-labelledby="player-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Jogar</p>
+            <h2 id="player-title" data-emulator-player-title>🎮 Emulador NES</h2>
+          </div>
+          <p>Uma única instância é mantida por vez. Para trocar de jogo, carregue outro arquivo ou volte à biblioteca legal.</p>
+        </div>
+
+        <div class="emulator-screen-shell">
+          <div class="emulator-screen" data-emulator-screen data-system="nes" aria-live="polite"></div>
+        </div>
+
+        <div class="emulator-actions" aria-label="Controles do emulador">
+          <button class="button button-primary" type="button" data-emulator-start>▶ Iniciar jogo</button>
+          <button class="button button-secondary" type="button" data-emulator-pause>⏸ Pausar</button>
+          <button class="button button-secondary" type="button" data-emulator-reset>↻ Reiniciar</button>
+          <button class="button button-secondary" type="button" data-emulator-fullscreen>⛶ Tela cheia</button>
+          <button class="button button-secondary" type="button" data-emulator-change>📂 Trocar jogo</button>
+        </div>
+        <p class="emulator-gamepad-status" data-gamepad-status aria-live="polite">🎮 Nenhum controle detectado</p>
+
+        <div class="emulator-controls-grid">
+          <section class="emulator-control-guide" aria-labelledby="keyboard-title">
+            <h3 id="keyboard-title">⌨️ Controles de teclado</h3>
+            <dl>
+              <div><dt>Direcional</dt><dd>Setas</dd></div>
+              <div><dt>A</dt><dd>X</dd></div>
+              <div><dt>B</dt><dd data-keyboard-b>Z ou Y</dd></div>
+              <div><dt>Start</dt><dd>Enter</dd></div>
+              <div><dt>Select</dt><dd data-keyboard-select>Ctrl direito</dd></div>
+              <div data-keyboard-turbo><dt>Turbo A / B</dt><dd>S / A</dd></div>
+            </dl>
+            <p data-keyboard-note>Um controle físico com layout padrão também pode ser usado: A, B, Select, Start e direcional seguem os botões equivalentes do controle.</p>
+          </section>
+
+          <section class="emulator-touch-panel" aria-labelledby="touch-title">
+            <h3 id="touch-title">📱 Controles de toque</h3>
+            <p>Use estes botões no celular. Para uma área maior de jogo, gire o dispositivo.</p>
+            <div class="touch-layout" data-touch-layout aria-label="Controles de toque NES">
+              <div class="touch-dpad">
+                <button type="button" data-touch-button="up" aria-label="Cima">▲</button>
+                <button type="button" data-touch-button="left" aria-label="Esquerda">◀</button>
+                <button type="button" data-touch-button="down" aria-label="Baixo">▼</button>
+                <button type="button" data-touch-button="right" aria-label="Direita">▶</button>
+              </div>
+              <div class="touch-main-buttons">
+                <button type="button" data-touch-button="b">B</button>
+                <button type="button" data-touch-button="a">A</button>
+              </div>
+              <div class="touch-system-buttons">
+                <button type="button" data-touch-button="select">Select</button>
+                <button type="button" data-touch-button="start">Start</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="emulator-legal-note" aria-label="Aviso de uso responsável">
+          <span aria-hidden="true">⚖️</span>
+          <p>Use apenas arquivos que você possui ou está autorizado a utilizar. A biblioteca do CV GAMES hospeda somente homebrews legais verificados; ROMs comerciais não são hospedadas, distribuídas nem indicadas.</p>
+        </aside>
+        <p class="emulator-attribution">NES baseado em <a href="lib/jsnes-2.1.0/README.md">JSNES 2.1.0</a> (Apache-2.0). Game Boy e Game Boy Color estão temporariamente indisponíveis. Save states e salvamentos persistentes não estão habilitados nesta fase.</p>
+      </section>
+
+      <aside class="central-notice central-notice--privacy" aria-labelledby="privacy-local-title">
+        <span aria-hidden="true">🔒</span>
+        <div>
+          <h2 id="privacy-local-title">Privacidade dos arquivos</h2>
+          <p>Arquivos pessoais NES são processados localmente pelo navegador e ficam apenas na memória durante a sessão. O CV GAMES não os envia para servidor, GitHub, API, Analytics ou terceiros. Os homebrews legais da biblioteca são recursos estáticos requisitados somente do próprio CV GAMES.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="index.html">Início</a><a href="index.html#jogos">Jogos</a><a href="baixar.html">Downloads</a><a href="central.html">Central Gamer</a><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="perfil.html">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
