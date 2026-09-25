@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore jogos homebrew legais para NES, com origem oficial e licença clara no CV GAMES.">
+  <meta property="og:title" content="Jogos Homebrew e Gratuitos | CV GAMES">
+  <meta property="og:description" content="Descubra jogos homebrew legais para NES, com fonte oficial e licença clara.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/homebrew.html">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jogos Homebrew e Gratuitos | CV GAMES">
+  <meta name="twitter:description" content="Jogos homebrew legais para NES, com fonte oficial e licença clara.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>Jogos Homebrew e Gratuitos | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/homebrew.html">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Homebrew & Jogos Gratuitos | CV GAMES",
+      "url": "https://cvgames.github.io/CV-GAMES/homebrew.html",
+      "description": "Biblioteca de jogos homebrew para NES com origem oficial e licença compatível para redistribuição.",
+      "inLanguage": "pt-BR"
+    }
+  </script>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/central.css">
+  <link rel="stylesheet" href="css/homebrew.css">
+  <script src="js/institutional.js" defer></script>
+  <script src="data/homebrew.js" defer></script>
+  <script src="js/homebrew.js" defer></script>
+</head>
+<body class="central-page homebrew-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="CV GAMES — Início"><img src="img/onconee.png" alt=""><span>CV GAMES</span></a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html">Central</a>
+        <a href="index.html#categorias">Categorias</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-button" href="index.html?favoritos=1#jogos" aria-label="Ver favoritos" title="Ver favoritos"><span class="favorite-icon" aria-hidden="true">♥</span><span>Favoritos</span></a>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="central-main">
+    <div class="container">
+      <a class="central-back" href="central.html#emuladores">← Voltar para a Central Gamer</a>
+
+      <section class="central-hero" aria-labelledby="homebrew-title">
+        <div class="central-hero-copy">
+          <p class="eyebrow">Biblioteca legal</p>
+          <h1 id="homebrew-title">🧪 Homebrew &amp; Jogos Gratuitos</h1>
+          <p class="central-lead">Descubra jogos independentes e homebrews disponibilizados legalmente pelos próprios criadores.</p>
+          <p>Cada título desta biblioteca tem fonte oficial, licença clara e compatibilidade verificada com os emuladores do CV GAMES.</p>
+          <div class="central-hero-actions">
+            <a class="button button-primary" href="#biblioteca">🎮 Explorar biblioteca</a>
+            <a class="button button-secondary" href="emuladores.html">Carregar meu arquivo</a>
+          </div>
+        </div>
+        <p class="central-hero-mark" aria-hidden="true">🧪</p>
+      </section>
+
+      <section class="central-section homebrew-intro" aria-labelledby="biblioteca-info-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">NES</p>
+            <h2 id="biblioteca-info-title">Biblioteca verificada</h2>
+          </div>
+          <p data-homebrew-count aria-live="polite">Carregando jogos legais…</p>
+        </div>
+        <p>Os arquivos hospedados são homebrews ou demos disponibilizados pelos projetos oficiais sob licença MIT. Créditos, origem, avisos de copyright e licenças estão preservados em <a href="THIRD_PARTY_LICENSES.md">THIRD_PARTY_LICENSES.md</a>.</p>
+      </section>
+
+      <aside class="central-notice" aria-label="Aviso legal da biblioteca">
+        <span aria-hidden="true">⚖️</span>
+        <p>Os jogos desta seção são distribuídos com autorização ou licença compatível. Jogos comerciais protegidos não são fornecidos pelo CV GAMES.</p>
+      </aside>
+
+      <section class="central-section" id="biblioteca" aria-labelledby="catalogo-title">
+        <div class="central-section-heading homebrew-catalog-heading">
+          <div>
+            <p class="eyebrow">Jogos disponíveis</p>
+            <h2 id="catalogo-title">🎮 Escolha um homebrew</h2>
+          </div>
+          <p>O botão de jogar prepara somente o título selecionado nesta lista fixa.</p>
+        </div>
+        <div class="homebrew-grid" data-homebrew-catalog aria-live="polite">
+          <p class="homebrew-empty">Carregando biblioteca…</p>
+        </div>
+      </section>
+
+      <section class="central-section" aria-labelledby="uso-title">
+        <div class="central-section-heading">
+          <div>
+            <p class="eyebrow">Uso responsável</p>
+            <h2 id="uso-title">Duas formas de usar o emulador</h2>
+          </div>
+          <p>Você mantém o controle sobre o modo de carregamento.</p>
+        </div>
+        <div class="emulator-guidance-grid">
+          <article class="emulator-guidance-card"><span aria-hidden="true">🧪</span><h3>Jogar homebrew do CV GAMES</h3><p>Escolha um dos títulos desta página. O emulador recebe apenas o arquivo local fixo correspondente ao ID permitido.</p></article>
+          <article class="emulator-guidance-card"><span aria-hidden="true">📂</span><h3>Carregar meu arquivo</h3><p>Na página de Emuladores, selecione seu próprio arquivo NES compatível. Ele é lido apenas na memória deste navegador.</p></article>
+          <article class="emulator-guidance-card"><span aria-hidden="true">🔎</span><h3>Verifique a origem</h3><p>Use os links de fonte oficial e licença em cada card para conferir o projeto antes de baixar ou jogar.</p></article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><p><strong>CV GAMES © 2026</strong></p><p>Jogos online e downloads</p></div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="index.html">Início</a><a href="index.html#jogos">Jogos</a><a href="baixar.html">Downloads</a><a href="central.html">Central Gamer</a><a href="sobre.html">Sobre</a><a href="contato.html">Contato</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="perfil.html">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
