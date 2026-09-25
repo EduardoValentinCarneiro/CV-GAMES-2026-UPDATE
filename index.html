@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogue online no CV GAMES: explore jogos leves, downloads e jogos exclusivos como CV DODGE, CV NEON BREAKER, CV STARFALL, CV XADREZ, CV JOGO DA VELHA e CV QUADRADOS.">
+  <meta property="og:title" content="CV GAMES — Jogos Online e Downloads">
+  <meta property="og:description" content="Jogue online, encontre jogos leves e acesse downloads no CV GAMES.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CV GAMES — Jogos Online e Downloads">
+  <meta name="twitter:description" content="Jogue online, encontre jogos leves e acesse downloads no CV GAMES.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>CV GAMES — Jogos Online e Downloads</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CV GAMES",
+      "url": "https://cvgames.github.io/CV-GAMES/",
+      "description": "Portal com jogos online, jogos leves e downloads.",
+      "inLanguage": "pt-BR"
+    }
+  </script>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('cv-games-theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch {
+      // O tema escuro definido no HTML continua como padrão seguro.
+    }
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/site-dialog.css">
+  <script src="data/jogos.js" defer></script>
+  <script src="js/stats.js" defer></script>
+  <script src="js/achievements.js" defer></script>
+  <script src="js/site-dialog.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="inicio">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="CV GAMES — Início">
+        <img src="img/onconee.png" alt="">
+        <span>CV GAMES</span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">☰</button>
+
+      <nav class="primary-nav" id="menu-principal" data-primary-nav aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html" aria-label="Central Gamer">Central</a>
+        <a href="#categorias">Categorias</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="favorite-button" type="button" data-favorites-toggle aria-pressed="false" aria-label="Mostrar somente favoritos" title="Mostrar somente favoritos">
+          <span class="favorite-icon" aria-hidden="true">♥</span>
+          <span class="favorite-count" data-favorite-count>0</span>
+          <span>Favoritos</span>
+        </button>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Ativar modo claro" title="Ativar modo claro">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-panel">
+          <p class="eyebrow">Seu portal para jogar</p>
+          <h1 id="hero-title">CV GAMES</h1>
+          <p class="hero-copy"><strong>Jogue, descubra e divirta-se.</strong><br>Uma seleção de jogos online, jogos leves e downloads disponíveis para encontrar sua próxima diversão. Conheça também CV DODGE, CV NEON BREAKER, CV STARFALL, CV XADREZ, CV JOGO DA VELHA e CV QUADRADOS, jogos exclusivos criados para o portal.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#jogos">🎮 Explorar Jogos</a>
+            <a class="button button-secondary" href="baixar.html">📥 Downloads</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section" aria-label="Pesquisar jogos">
+      <div class="container">
+        <label class="search-box" for="pesquisa-jogos">
+          <span aria-hidden="true">🔎</span>
+          <input id="pesquisa-jogos" type="search" data-game-search placeholder="Pesquisar jogos..." autocomplete="off" aria-describedby="status-pesquisa">
+        </label>
+        <p class="search-status" id="status-pesquisa" data-search-status aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="content-section" id="categorias" aria-labelledby="titulo-categorias">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="titulo-categorias">Explore por categoria</h2>
+          <p>Escolha uma categoria para filtrar o catálogo sem recarregar a página.</p>
+        </div>
+        <div class="category-list">
+          <button class="category-chip" type="button" data-category-filter="acao" aria-pressed="false"><span aria-hidden="true">🎮</span><span>Ação</span></button>
+          <button class="category-chip" type="button" data-category-filter="corrida" aria-pressed="false"><span aria-hidden="true">🏎️</span><span>Corrida</span></button>
+          <button class="category-chip" type="button" data-category-filter="terror" aria-pressed="false"><span aria-hidden="true">👻</span><span>Terror</span></button>
+          <button class="category-chip" type="button" data-category-filter="puzzle" aria-pressed="false"><span aria-hidden="true">🧩</span><span>Puzzle</span></button>
+          <button class="category-chip" type="button" data-category-filter="aventura" aria-pressed="false"><span aria-hidden="true">⚔️</span><span>Aventura</span></button>
+          <button class="category-chip" type="button" data-category-filter="multiplayer" aria-pressed="false"><span aria-hidden="true">👥</span><span>Multiplayer</span></button>
+          <button class="category-chip" type="button" data-category-filter="esportes" aria-pressed="false"><span aria-hidden="true">🏀</span><span>Esportes</span></button>
+          <button class="category-chip" type="button" data-category-filter="arcade" aria-pressed="false"><span aria-hidden="true">🕹️</span><span>Arcade</span></button>
+          <button class="category-chip" type="button" data-category-filter="pc-fraco" aria-pressed="false"><span aria-hidden="true">🟢</span><span>PC Fraco</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section central-home-section" aria-labelledby="titulo-central-gamer">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Novos recursos</p>
+            <h2 id="titulo-central-gamer">🎮 Explore a Central Gamer</h2>
+          </div>
+          <p>Emulação local de NES, homebrews legais, atalhos para cloud gaming oficial e ferramentas úteis em um só lugar.</p>
+        </div>
+        <div class="central-home-grid">
+          <a class="central-home-card" href="emuladores.html">
+            <span class="central-home-icon" aria-hidden="true">🕹️</span>
+            <strong>Emuladores</strong>
+            <span>Carregue um arquivo compatível de NES (.nes) do seu dispositivo ou explore homebrews legais no navegador. Game Boy e Game Boy Color estão temporariamente indisponíveis.</span>
+          </a>
+          <a class="central-home-card" href="central.html#cloud-gaming">
+            <span class="central-home-icon" aria-hidden="true">☁️</span>
+            <strong>Cloud Gaming</strong>
+            <span>Acesse atalhos para serviços oficiais de jogos pela nuvem.</span>
+          </a>
+          <a class="central-home-card" href="ferramentas.html">
+            <span class="central-home-icon" aria-hidden="true">🛠️</span>
+            <strong>Ferramentas Gamer</strong>
+            <span>Use timer e testes locais de controle, teclado e mouse.</span>
+          </a>
+        </div>
+        <div class="central-home-action"><a class="button button-secondary" href="central.html">Abrir Central Gamer</a></div>
+      </div>
+    </section>
+
+    <section class="content-section curated-section" id="destaques" aria-labelledby="titulo-destaques">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="titulo-destaques">🔥 Jogos em Destaque</h2>
+          <p>Seleção inicial do CV GAMES usando os jogos já disponíveis no portal.</p>
+        </div>
+        <div class="game-grid" id="featured-games" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="ad-slot ad-slot--home-catalog" data-ad-slot="home-after-featured" aria-hidden="true"></div>
+
+    <section class="content-section curated-section" id="recentes" aria-labelledby="titulo-recentes">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="titulo-recentes">🆕 Adicionados recentemente</h2>
+          <p>Preparado para ordenar automaticamente por data de adição em uma próxima fase.</p>
+        </div>
+        <div class="game-grid" id="recent-games" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="content-section curated-section continue-section" id="continuar-jogando" data-continue-section hidden aria-labelledby="titulo-continuar-jogando">
+      <div class="container">
+        <div class="section-heading section-heading-with-action">
+          <div class="section-heading-copy">
+            <h2 id="titulo-continuar-jogando">🎮 Continuar jogando</h2>
+            <p data-continue-description>Seus últimos jogos acessados neste dispositivo.</p>
+          </div>
+          <button class="catalog-reset" type="button" data-clear-stats>Limpar histórico</button>
+        </div>
+        <div class="game-grid" id="continue-games" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="content-section curated-section" id="populares" aria-labelledby="titulo-populares">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="titulo-populares">🔥 Mais jogados</h2>
+          <p data-popular-description>Ranking local por acessos neste dispositivo. Sem histórico, usamos uma seleção inicial do CV GAMES.</p>
+        </div>
+        <div class="game-grid" id="popular-games" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="jogos" aria-labelledby="titulo-jogos">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="titulo-jogos" data-catalog-title>🎮 Todos os jogos</h2>
+          <div class="catalog-summary">
+            <p data-results-count aria-live="polite">28 jogos encontrados</p>
+            <button class="catalog-reset" type="button" data-clear-filters>🎮 Todos os jogos</button>
+          </div>
+        </div>
+        <div class="game-grid" id="all-games" aria-live="polite">
+          <p class="empty-state">Carregando catálogo de jogos...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p><strong>CV GAMES © 2026</strong></p>
+        <p>Jogos online e downloads</p>
+      </div>
+      <nav class="footer-nav" aria-label="Navegação do rodapé">
+        <a href="#inicio">Início</a>
+        <a href="#jogos">Jogos</a>
+        <a href="baixar.html">Downloads</a>
+        <a href="central.html">Central Gamer</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

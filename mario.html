@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogue Super Mario online no CV GAMES. Aventura clássica de plataforma com Mario.">
+  <meta property="og:title" content="Super Mario — Jogar Online | CV GAMES">
+  <meta property="og:description" content="Aventura clássica de plataforma com Mario no CV GAMES.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CV GAMES">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://cvgames.github.io/CV-GAMES/mario.html">
+  <meta property="og:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta property="og:image:alt" content="Logo do CV GAMES">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Super Mario — Jogar Online | CV GAMES">
+  <meta name="twitter:description" content="Aventura clássica de plataforma com Mario no CV GAMES.">
+  <meta name="twitter:image" content="https://cvgames.github.io/CV-GAMES/img/onconee.png">
+  <meta name="twitter:image:alt" content="Logo do CV GAMES">
+  <title>Super Mario — Jogar Online | CV GAMES</title>
+  <link rel="canonical" href="https://cvgames.github.io/CV-GAMES/mario.html">
+  <link rel="icon" href="img/incon.png" type="image/png">
+  <script>
+    try { const savedTheme = localStorage.getItem('cv-games-theme'); if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme; } catch {}
+    window.NOSW = true;
+    window.GAME_CONFIG = { pokiSdkDebug: false, leaderboard: 'mockup', bundlesPath: './bundles' };
+    delete Array.prototype.group;
+  </script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/game-page.css">
+  <script src="data/jogos.js" defer></script>
+  <script src="js/stats.js" defer></script>
+  <script src="js/achievements.js" defer></script>
+  <script src="js/game-page.js" defer></script>
+</head>
+<body class="game-page" data-game-id="super-mario">
+  <a class="skip-link" href="#jogar">Pular para o jogo</a>
+  <header id="game-page-header"></header>
+  <main class="container game-main">
+    <div id="game-intro"><noscript><section class="game-hero" aria-labelledby="game-title"><div><p class="eyebrow">🎮 Jogo online</p><h1 id="game-title">Super Mario — Jogar Online</h1><p>Aventura clássica de plataforma com Mario.</p></div></section></noscript></div>
+    <section class="game-section" id="jogar" aria-labelledby="jogar-title">
+      <div class="game-section-heading"><h2 id="jogar-title">🎮 Jogar</h2><p>O jogo é carregado na área abaixo.</p></div>
+      <div class="game-stage"><div class="game-loader" data-game-loading><span class="loader-ring" aria-hidden="true"></span><span>Carregando jogo...</span></div><iframe id="jogo-frame" data-game-iframe src="https://jcw87.github.io/c2-smb1/" title="Super Mario" allowfullscreen></iframe></div>
+      <div class="game-stage-tools"><button type="button" data-game-fullscreen>⛶ Tela cheia</button></div>
+    </section>
+    <div id="game-details"></div>
+  </main>
+  <footer id="game-page-footer"></footer>
+</body>
+</html>
