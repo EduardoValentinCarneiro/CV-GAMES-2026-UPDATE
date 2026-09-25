@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cvgames.github.io/CV-GAMES/sitemap.xml
